@@ -1,0 +1,230 @@
+turnkey-core-12.0 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian Squeeze 6.0.4.
+
+    - Support for dependency based boot sequence (insserv).
+    - Default ISO Kernel 2.6-686 (TKL Core Lenny was 486).
+
+  * Locale:
+
+    - Set default locale to en_US.UTF-8 (was en_GB).
+    - Updated locale configuration for compatibility with Squeeze.
+    - Includes localepurge (pre-configured and initialized).
+
+  * Installer (di-live):
+
+    - Upgraded di-live to latest version compatible with Squeeze.
+    - Misc bugfixes and tweaks.
+
+  * Boot (bootsplash and grub):
+
+    - Upgraded bootsplash generation to be compatible with Squeeze.
+    - Removed bootsplash unused panel options and extraneous files.
+    - Tweaked grub default timeouts (hidden_timeout=0, timeout=3).
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to 1.580 and default theme.
+    - Disabled inline webmin upgrades (managed by APT).
+    - Moved history logging to /var/webmin (incorrect use of /etc).
+
+  * Bugfixes and tweaks:
+
+    - Fixed LSB compatibility (di-live, inithooks, confconsole) [LP#700399].
+    - Added support for spaces in bashrc promptpath [LP#932388].
+    - Replaced APT trusted.db with trusted.gpg.d/$distro.
+    - Removal of log files generated during build.
+
+    - inithooks: Improved headless deployment (REDIRECT_OUTPUT directive).
+    - etckeeper: Uninitialization post build and firstboot (turnkey-init).
+    - resolvconf: Removed upstart hack (not relevant on Squeeze).
+    - confconsole: Miscallaneous bugfixes and refactoring.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Tue, 28 Feb 2012 15:23:55 +0200
+
+turnkey-core-11.3 (1) turnkey; urgency=low
+
+  * Installed security updates.
+  * Enabled etckeeper garbage collection by default.
+  * Upgraded to latest inithooks version (adhoc re-initialization via turnkey-init)
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 05 Dec 2011 10:48:44 +0000
+
+turnkey-core-11.2 (1) turnkey; urgency=low
+
+  * Installed security updates.
+  * Added HubDNS package and firstboot configuration.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Fri, 15 Jul 2011 07:47:08 +0000
+
+turnkey-core-11.1 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Ubuntu 10.04.1 LTS.
+
+  * No more chimeras (mixing of packages from Debian/ubuntu).
+
+  * Installer (di-live):
+
+    - Added LVM support, with guided partitioning supported in di-live,
+      and webmin module for convenience.
+    - Guided partitioning of root volume will default to 90% of volume
+      group to support LVM snapshots out of the box.
+    - Moved appliance secret regeneration, configuration, setting of
+      passwords to inithooks to run on firstboot.
+    - Installation media will be ejected and a message displayed to
+      remove media after successful installation.
+    - Warning messages will be logged instead of inline (caused a bad
+      user experience).
+    - Upgraded di-live to latest version compatible with Lucid.
+
+  * Initialization Hooks (inithooks):
+
+    - Setting of passwords and configuration is now done on firstboot.
+    - Application specific configuration (passwords, email, domain) is
+      now supported putting an end to default settings.
+    - This supports all build targets such as VM builds, and most run
+      in live-mode (convenience, consistent user-experience).
+    - Includes auto-apt-archive to configure the closest APT package
+      archive, determined via the TurnKey Hub GeoIP service.
+    - All relevant inithooks can be preseeded, refer to:
+      http://www.turnkeylinux.org/docs/inithooks
+          
+  * Configuration Console (confconsole):
+
+    - /etc/confconsole/usage.txt has been replaced with services.txt
+    - The usage screen is now updated dynamically for simpler management
+      and customization.
+
+  * Updated bootsplash menu:
+
+    - Install to hard disk - default, moved to first option.
+    - Live system -> Try without installing (Live CD demo mode).
+    - Removed Boot from first hard disk.
+
+  * Display system info in motd, as well non-persistent mode warning (motd).
+
+  * NTP configured with recommended pool servers and to cope with large time
+    drifts.
+
+  * Setting of LANG in /etc/default/locale.
+
+  * Packages:
+
+    - Includes TKLBAM (TurnKey Backup and Migration) + new Webmin module.
+    - Includes etckeeper initialized on firstboot (using git-core).
+    - Includes logrotate for automatic log rotation.
+
+    - Configured APT to not install recommends by default.
+
+    - Upgraded webmin to 1.520 and default theme.
+    - Upgraded shellinabox to 2.10, set default theme to white-on-black.
+
+    - Customized bashrc and bashrc.d scripts.
+    - Includes bash-completion (very useful addition for cli).
+    - Includes iproute (ipv6 provisoning).
+    - Includes acpid (support hypervisor reboot/power down signals).
+    - Replaces host with bind9-host (deprecated).
+    - Replaces sysklogd and klogd with rsyslog (inline with Ubuntu).
+
+    - Grub2 (grub-pc) pre-configuration (verbose, timeout, console).
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Sun, 19 Dec 2010 15:01:05 +0200
+
+turnkey-core-2009.10 (2) hardy; urgency=low
+
+  * Installed all security updates (see manifest for package versions).
+
+  * Install security updates on firstboot (except when running live).
+
+  * Trick webmin into not checking for upgrades (managed by apt).
+
+  * Included latest version of inithooks and updated scripts.
+
+  * Included wget as per common request.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 29 Mar 2010 09:02:11 +0200
+
+turnkey-core-2009.10 (1) hardy; urgency=low
+
+  * Upgraded base distribution to Ubuntu 8.04.3 LTS.
+
+  * Added shell-in-a-box to provide web shell access (listening on port
+    12320 - uses SSL).
+
+  * Added inithooks to execute firstboot/everyboot scripts, for example
+    regenerating cryptographic keys on live boot:
+    
+    - SSH keys.
+    - Default SSL certificate (used by Webmin, Apache, Lighttpd).
+
+  * Upgraded Webmin to 1.490 and default theme.
+
+    - Disabled Webmin scheduled updates (managed by APT)
+
+  * New versions of confconsole and di-live include many improvements and
+    bugfixes (see their respective release notes for details).
+
+  * Implemented APT pinning downgrade workaround (LP#315175).
+  * Added a few generically useful packages (unzip: LP#356099, ethtool).
+  * Added IPv6 configuration to /etc/hosts.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Tue, 29 Sep 2009 15:39:41 +0200
+
+turnkey-core-2009.02 (1) hardy; urgency=low
+
+  * initial public release of the TurnKey Linux "core": it's the basic
+    appliance on top of which all TurnKey Linux appliances are now built.
+
+  * upgraded base distribution to Ubuntu 8.04.2 LTS
+
+  * added many generically useful webmin modules:
+  
+    - network
+        - firewall configuration (with example configuration)
+        - network configuration
+
+    - system
+        - configure time, date and timezone
+        - configure users and groups
+        - manage software packages
+        - change passwords
+        - system logs
+
+    - tools
+        - text editor
+        - shell commands
+        - simple file upload/download
+        - file manager (needs support for Java in browser)
+        - custom commands
+
+  * changed webmin port from 10000 to 12321 (more distinct, easier to type)
+
+  * regenerate cryptographic keys during installation
+    
+    - SSH keys 
+    - default SSL certificate (used by webmin, Apache, lighttpd)
+
+  * configured sshd to permit an empty password in demo/live mode
+
+  * improved package management configuration
+
+    - enabled Ubuntu's Universe component by default (convenience)
+    - cron-apt configured to:
+
+        - correctly handle modified conffiles when auto-upgrading (won't hang)
+        - only auto-upgrade packages from the security components
+        - update the cache for all components 
+        - share sources with other interfaces to apt (e.g., apt-get)
+        - log to syslog instead of mailing root
+
+  * new versions of confconsole and di-live include many improvements and
+    bugfixes (see their respective release notes for details)
+
+  * changed default console font to improve readability of console dialogs
+  * added a few generically useful packages (iptables, ntp, nano)
+  * updated /etc/network/interfaces to support multiple network interface cards
+  * replaced metalog with sysklogd/klogd
+  * optimized footprint (rebuilt from bare essentials)
+  * added the release package that holds this changelog
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Thu, 29 Jan 2009 14:31:46 +0200
