@@ -48,6 +48,7 @@ turnkey-core-12.0 (1) turnkey; urgency=low
     - Fixed LSB compatibility (di-live, inithooks, confconsole) [LP#700399].
     - Added support for spaces in bashrc promptpath [LP#932388].
     - Replaced APT trusted.db with trusted.gpg.d/$distro.
+    - Added bashmarks (super useful bash bookmarking).
     - Removal of log files generated during build.
 
     - inithooks: Improved headless deployment (REDIRECT_OUTPUT directive).
