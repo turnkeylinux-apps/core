@@ -5,11 +5,16 @@ turnkey-core-12.0 (1) turnkey; urgency=low
     - Support for dependency based boot sequence (insserv).
     - Default ISO Kernel 2.6-686 (TKL Core Lenny was 486).
 
-  * Locale:
+  * TKLBAM (backup and migration):
 
-    - Set default locale to en_US.UTF-8 (was en_GB).
-    - Updated locale configuration for compatibility with Squeeze.
-    - Includes localepurge (pre-configured and initialized).
+    - Upgraded to latest version of TKLBAM (see changelog for details, below
+      are some of the highlights).
+    - Added embedded squid download cache support.
+    - Added backup resume functionality.
+    - Added support for multipart parallel uploads to S3.
+    - Upgraded duplicity and python-boto.
+    - Multipart parallel S3 uploads.
+    - Fixed root cause of MySQL max packet issue (bugfix).
 
   * Installer (di-live):
 
@@ -21,6 +26,12 @@ turnkey-core-12.0 (1) turnkey; urgency=low
     - Upgraded bootsplash generation to be compatible with Squeeze.
     - Removed bootsplash unused panel options and extraneous files.
     - Tweaked grub default timeouts (hidden_timeout=0, timeout=3).
+
+  * Locale:
+
+    - Set default locale to en_US.UTF-8 (was en_GB).
+    - Updated locale configuration for compatibility with Squeeze.
+    - Includes localepurge (pre-configured and initialized).
 
   * Web management console (webmin):
 
