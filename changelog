@@ -1,15 +1,20 @@
-turnkey-core-12.0rc (1) turnkey; urgency=low
+turnkey-core-12.0 (1) turnkey; urgency=low
 
-  * Upgraded base distribution to Debian Squeeze 6.0.4.
+  * Upgraded base distribution to Debian Squeeze 6.0.5.
 
     - Support for dependency based boot sequence (insserv).
     - Default ISO Kernel 2.6-686 (TKL Core Lenny was 486).
 
-  * Locale:
+  * TKLBAM (backup and migration):
 
-    - Set default locale to en_US.UTF-8 (was en_GB).
-    - Updated locale configuration for compatibility with Squeeze.
-    - Includes localepurge (pre-configured and initialized).
+    - Upgraded to latest version of TKLBAM (see changelog for details, below
+      are some of the highlights).
+    - Added embedded squid download cache support.
+    - Added backup resume functionality.
+    - Added support for multipart parallel uploads to S3.
+    - Upgraded duplicity and python-boto.
+    - Multipart parallel S3 uploads.
+    - Fixed root cause of MySQL max packet issue (bugfix).
 
   * Installer (di-live):
 
@@ -22,25 +27,38 @@ turnkey-core-12.0rc (1) turnkey; urgency=low
     - Removed bootsplash unused panel options and extraneous files.
     - Tweaked grub default timeouts (hidden_timeout=0, timeout=3).
 
+  * Locale:
+
+    - Set default locale to en_US.UTF-8 (was en_GB).
+    - Updated locale configuration for compatibility with Squeeze.
+    - Includes localepurge (pre-configured and initialized).
+
   * Web management console (webmin):
 
-    - Upgraded webmin to 1.580 and default theme.
+    - Upgraded webmin to 1.590 and default theme.
     - Disabled inline webmin upgrades (managed by APT).
     - Moved history logging to /var/webmin (incorrect use of /etc).
+
+  * Web shell (shellinabox):
+
+    - Upgraded shellinabox to 2.14.
 
   * Bugfixes and tweaks:
 
     - Fixed LSB compatibility (di-live, inithooks, confconsole) [LP#700399].
     - Added support for spaces in bashrc promptpath [LP#932388].
     - Replaced APT trusted.db with trusted.gpg.d/$distro.
+    - Added bashmarks (super useful bash bookmarking).
+
     - Removal of log files generated during build.
 
     - inithooks: Improved headless deployment (REDIRECT_OUTPUT directive).
     - etckeeper: Uninitialization post build and firstboot (turnkey-init).
     - resolvconf: Removed upstart hack (not relevant on Squeeze).
     - confconsole: Miscallaneous bugfixes and refactoring.
+    - install-security-updates: Wrapper script for convenience.
 
- -- Alon Swartz <alon@turnkeylinux.org>  Tue, 28 Feb 2012 15:23:55 +0200
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 01 Aug 2012 08:00:00 +0200
 
 turnkey-core-11.3 (1) turnkey; urgency=low
 
