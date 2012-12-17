@@ -1,3 +1,9 @@
+turnkey-core-13.0 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian Wheezy 7.0 (pre-release).
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 12 Dec 2012 08:00:00 +0200
+
 turnkey-core-12.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Squeeze 6.0.5.
