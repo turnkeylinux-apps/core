@@ -2,7 +2,51 @@ turnkey-core-13.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Wheezy 7.0 (pre-release).
 
- -- Alon Swartz <alon@turnkeylinux.org>  Wed, 12 Dec 2012 08:00:00 +0200
+    - Default ISO Kernel 3.x branch for 686 (PAE enabled) and amd64.
+
+  * TurnKey Backup and Migration (tklbam):
+
+    - Fixed keypacket AES cipher initialization required as of python-crypto 2.6.
+    - Added jitter to tklbam-backup cron job.
+    - Refactored to use pycurl-wrapper's new API class.
+
+  * TurnKey Initialization Hooks (inithooks):
+
+    - Implemented turnkey-init-fence for headless deployments.
+    - Re-implemented turnkey-init in Python.
+    - Improved hooks sub-execution and handling of CTRL-C.
+    - Imported common hooks from overlay into package.
+    - Limit paragraph width for better UX.
+
+  * TurnKey Python Library (turnkey-pylib):
+
+    - Multiple improvements to Parallelize and Command modules.
+    - Added 20 new modules.
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to 1.610.
+    - New version includes new ISCSI modules and a gray theme.
+
+  * Bugfixes and tweaks:
+
+    - apt: replaced auto-apt-archive with Debian's CDN mirror network.
+    - apt: updated trusted.gpg.d/$release to $distro.
+
+    - bash: improved bashrc whitespace support [LP#932388].
+    - bash: added useful git aliases (see ~/.bashrc.d/git).
+
+    - busybox-initramfs: custom built enabling initramfs support.
+    - casper: updated path_id execution per udev changes.
+    - di-live: updated architecture config and bootloader depends.
+
+    - sshd: disabled dns checks (if resolution fails will prevent logins).
+    - shellinabox: fixed colors to support dialog interfaces.
+    - motd: tweaked configuration due to changes in Wheezy.
+    - pycurl-wrapper: added timeout support, created new API class.
+    - hubdns: increased jitter, refactored to use pycurl-wrapper's API class.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 14 Jan 2013 08:00:00 +0200
 
 turnkey-core-12.0 (1) turnkey; urgency=low
 
