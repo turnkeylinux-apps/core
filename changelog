@@ -1,52 +1,76 @@
-turnkey-core-13.0 (1) turnkey; urgency=low
+turnkey-core-12.1 (1) turnkey; urgency=low
 
-  * Upgraded base distribution to Debian Wheezy 7.0 (pre-release).
+  * Upgraded base distribution to Debian Squeeze 6.0.7.
 
-    - Default ISO Kernel 3.x branch for 686 (PAE enabled) and amd64.
+  * Available in both 32-bit (i386) and 64-bit (amd64) architectures.
 
   * TurnKey Backup and Migration (tklbam):
 
+    - Fixed MySQL deserialization code (duplicated last element in row if > 1MB).
     - Fixed keypacket AES cipher initialization required as of python-crypto 2.6.
     - Added jitter to tklbam-backup cron job.
     - Refactored to use pycurl-wrapper's new API class.
+
+  * TurnKey Configuration Console (confconsole):
+
+    - Fixed multiple network interface support (LP#1045320).
+    - Added support for --usage (no advanced menu options).
+    - Replaced kbd recommendation with console-tools | console-utilities.
 
   * TurnKey Initialization Hooks (inithooks):
 
     - Implemented turnkey-init-fence for headless deployments.
     - Re-implemented turnkey-init in Python.
+    - Display confconsole usage as last screen of turnkey-init.
     - Improved hooks sub-execution and handling of CTRL-C.
     - Imported common hooks from overlay into package.
     - Limit paragraph width for better UX.
+    - Replaced kbd dependency with console-tools | console-utilities.
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to 1.620.
+    - New version includes new ISCSI modules and a gray theme.
+
+  * Web shell (shellinabox):
+
+    - Support new keycodes (dash, underscore) used by firefox 15+ (LP#1104164).
+    - Install available options as is without renaming or enabling.
+    - Enable default options (white-on-black, color) postinst.
+    - Fixed broken packaging of stray option styling files.
+    - Fixed colors to support dialog interfaces.
 
   * TurnKey Python Library (turnkey-pylib):
 
     - Multiple improvements to Parallelize and Command modules.
     - Added 20 new modules.
 
-  * Web management console (webmin):
-
-    - Upgraded webmin to 1.610.
-    - New version includes new ISCSI modules and a gray theme.
-
   * Bugfixes and tweaks:
+
+    - packages: added curl (generically useful).
+    - packages: acpi-support-base (handle acpi events - LP#101194).
 
     - apt: replaced auto-apt-archive with Debian's CDN mirror network.
     - apt: updated trusted.gpg.d/$release to $distro.
+    - apt: removed ubuntu trusted key.
 
-    - bash: improved bashrc whitespace support [LP#932388].
+    - bash: improved bashrc whitespace support (LP#932388).
     - bash: added useful git aliases (see ~/.bashrc.d/git).
+
+    - di-live: updated architecture config and bootloader depends.
+    - di-live: replaced kbd recommendation with console-tools | console-utilities.
 
     - busybox-initramfs: custom built enabling initramfs support.
     - casper: updated path_id execution per udev changes.
-    - di-live: updated architecture config and bootloader depends.
 
     - sshd: disabled dns checks (if resolution fails will prevent logins).
-    - shellinabox: fixed colors to support dialog interfaces.
-    - motd: tweaked configuration due to changes in Wheezy.
+    - motd: tweaked configuration to support upcoming Wheezy release.
     - pycurl-wrapper: added timeout support, created new API class.
     - hubdns: increased jitter, refactored to use pycurl-wrapper's API class.
 
- -- Alon Swartz <alon@turnkeylinux.org>  Mon, 14 Jan 2013 08:00:00 +0200
+  * Latest versions of all packages will be installed during build.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 03 Apr 2013 08:00:00 +0200
 
 turnkey-core-12.0 (1) turnkey; urgency=low
 
