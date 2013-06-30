@@ -9,7 +9,7 @@ some `screenshots`_.
 
 Features:
 
-- **Base distribution**: Debian 6.0.5 (Squeeze).
+- **Base distribution**: Debian 6.0.7 (Squeeze).
 - **Build formats**: deploys on bare metal, virtual machines (e.g.,
   VMWare, VirtualBox, KVM, Xen) and in the cloud.
    
@@ -17,11 +17,10 @@ Features:
    - `Virtual Machine images`_: Optimized for virtualized hardware.
      Pre-installed and ready to run.
    - `Amazon Machine Image (AMI)`_: best launched via the `TurnKey
-     Hub`_. Alternatively, experts can use the listing of `AMI codes`_
-     to launch through other interfaces (e.g., Amazon CLI tools)
+     Hub`_.
 
 - **Smart backups** (`TKLBAM`_): automated backup and restore, with
-  system migration capabilities
+  system migration capabilities.
 - **Secure and easy to maintain**: `auto-updated`_ daily with latest
   security patches
 - **Dynamic DNS** (`hubdns`_): associates your IP with a custom domain
@@ -73,8 +72,6 @@ Features:
    - Regenerates SSL and SSH cryptographic keys.
    - Installs latest security updates, unless user chooses to defer this
      for later.
-   - Uses GeoIP to automatically configure closest APT package archive
-     for maximum network performance.
 
 - **Command line power tools**
    
