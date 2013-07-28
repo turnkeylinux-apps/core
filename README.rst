@@ -99,5 +99,5 @@ Features:
 .. _LVM: http://tldp.org/HOWTO/LVM-HOWTO/
 .. _shellinabox: http://code.google.com/p/shellinabox/
 .. _Webmin: http://webmin.com/
-.. _confconsole: http://code.turnkeylinux.org/confconsole/docs/
+.. _confconsole: https://github.com/turnkeylinux/confconsole
 .. _shell hooks: http://www.turnkeylinux.org/blog/generic-shell-hooks
