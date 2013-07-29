@@ -9,7 +9,7 @@ some `screenshots`_.
 
 Features:
 
-- **Base distribution**: Debian 6.0.7 (Squeeze).
+- **Base distribution**: Debian 7.1 (Wheezy).
 - **Build formats**: deploys on bare metal, virtual machines (e.g.,
   VMWare, VirtualBox, KVM, Xen) and in the cloud.
    
