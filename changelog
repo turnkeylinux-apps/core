@@ -1,6 +1,16 @@
 turnkey-core-13.0 (1) turnkey; urgency=low
 
-  * Upgraded base distribution to Debian Squeeze 7.1.
+  * Upgraded base distribution to Debian Wheezy 7.1.
+
+  * TurnKey Backup and Migration (tklbam):
+
+    - Added PostgreSQL database support.
+    - Added MySQL support for views and triggers.
+    - Added --raw-upload and --dump options to backup.
+    - Added --raw-download and --simulate options to restore.
+    - Added "inspect" state to hooks mechanism.
+    - Multiple backup and restore bugfixes and improvements.
+      https://github.com/turnkeylinux/tklbam/blob/master/docs/RelNotes-1.3.txt
 
   * Web management console (webmin):
 
@@ -10,8 +20,9 @@ turnkey-core-13.0 (1) turnkey; urgency=low
   * Bugfixes and tweaks:
 
     - busybox-initramfs: custom built enabling initramfs support.
+    - resolvconf: set resolver timeout to 1 second (useful when offline).
 
- -- Alon Swartz <alon@turnkeylinux.org>  Sun, 28 Jul 2013 11:51:51 +0300
+ -- Alon Swartz <alon@turnkeylinux.org>  Thu, 10 Oct 2013 13:56:25 +0300
 
 turnkey-core-12.1 (1) turnkey; urgency=low
 
