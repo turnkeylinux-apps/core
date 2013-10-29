@@ -11,7 +11,7 @@ Features:
 
 - **Base distribution**: Debian 7.2 (Wheezy).
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
-  VMWare, VirtualBox, OpenStack, OpenVZ, KVM, Xen) and in the cloud.
+  OpenStack, VMWare, VirtualBox, OpenVZ, KVM, Xen) and in the cloud.
    
    - `ISO images`_: Generic installable Live CD. Installs anywhere.
    - `Virtual Machine images`_: Optimized for virtualized hardware,
