@@ -1,0 +1,3 @@
+#!/bin/sh -ex
+
+echo "do nothing - core requires no post-package configuration commands"
