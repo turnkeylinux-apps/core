@@ -1,3 +1,65 @@
+turnkey-core-14.0 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian Wheezy 8.0.
+
+  * TurnKey Backup and Migration (tklbam):
+
+    - No longer requires TurnKey Hub or even a network connection.
+    - Ability to force a profile.
+    - Increased robustness of MySQL backup/restore.
+    - Improved logging (output in realtime, exceptions, rotation).
+    - Usability improvments (more verbose, self-documenting).
+    - Improved --debug behaviour.
+    - Multiple bugfixes and improvements
+      https://github.com/turnkeylinux/tklbam/blob/master/docs/RelNotes-1.4.txt
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to 1.740.
+    - Configured SSL to resolve Poodle vulnerability.
+
+  * Web shell (shellinabox):
+
+    - Served behind stunnel4 to resolve Poodle vulnerability.
+    - Bugfix: only one line displayed on mobile device (ie. ipad).
+
+  * Initialization hooks (inithooks):
+
+    - Kernel upgrade on firstboot will trigger a reboot.
+    - TurnKey initialization fence HTTPS encryption warning explanation.
+    - Improved SSH key regeneration.
+    - New hooks added: hostname, autogrow-fs, ipconfig.
+    - Added autogrow filesystem hook.
+    - Added IP configuration hook.
+    - Added support for systemd.
+
+  * Configuration console (confconsole):
+
+    - Added support for systemd.
+
+  * Installer (di-live):
+
+    - Updated to support Debian 8.0, version bump to 0.9.5.
+    - Upgraded partitioner with latest d-i upstream code.
+    - Removed alignment tags which are not interpreted by debconf.
+    - Updated build-depends and recommends.
+    - Added support for systemd.
+
+  * Miscallaneous
+
+    - systemd: set as default init system.
+    - ssl/ssh: lots of security improvements.
+    - openssh-server: configured to permit root login with password.
+    - vim-tiny: set as alternative for vim instead of symlink.
+    - sources.list: updated cdn.debian.net to http.debian.net.
+    - udhcpc: added support for /32 IPv4 subnets.
+    - bashrc: added missing aliases for color terms.
+    - iso-hybrid: ISO images are pre-processed for USB flash booting.
+    - gfxboot: updated to support newer syslinux version.
+    - busybox-initramfs: custom built enabling initramfs support.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 06 May 2015 10:44:32 +0300
+
 turnkey-core-13.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Wheezy 7.2.

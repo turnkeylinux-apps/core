@@ -9,7 +9,7 @@ some `screenshots`_.
 
 Features:
 
-- **Base distribution**: Debian 7.2 (Wheezy).
+- **Base distribution**: Debian 8.0 (Jessie).
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
   OpenStack, VMWare, VirtualBox, OpenVZ, KVM, Xen) and in the cloud.
    
