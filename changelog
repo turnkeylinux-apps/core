@@ -16,11 +16,11 @@ turnkey-core-14.0 (1) turnkey; urgency=low
   * Web management console (webmin):
 
     - Upgraded webmin to 1.760.
-    - Configured SSL to resolve Poodle vulnerability.
+    - Served behind stunnel4 for improved SSL.
 
   * Web shell (shellinabox):
 
-    - Served behind stunnel4 to resolve Poodle vulnerability.
+    - Served behind stunnel4 for improved SSL.
     - Bugfix: only one line displayed on mobile device (ie. ipad).
 
   * Initialization hooks (inithooks):
@@ -49,6 +49,7 @@ turnkey-core-14.0 (1) turnkey; urgency=low
 
   * Miscallaneous
 
+    - monit: added cpu/ram/swap/disk alerts.
     - systemd: set as default init system.
     - ssl/ssh: lots of security improvements.
     - openssh-server: configured to permit root login with password.
@@ -60,7 +61,7 @@ turnkey-core-14.0 (1) turnkey; urgency=low
     - gfxboot: updated to support newer syslinux version.
     - busybox-initramfs: custom built enabling initramfs support.
 
- -- Alon Swartz <alon@turnkeylinux.org>  Sun, 02 Aug 2015 14:48:28 +0300
+ -- Alon Swartz <alon@turnkeylinux.org>  Thu, 27 Aug 2015 18:32:27 +0300
 
 turnkey-core-13.0 (1) turnkey; urgency=low
 
