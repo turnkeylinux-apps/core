@@ -87,18 +87,18 @@ Features:
 
 - **Automatic time synchronization with NTP**
 
-.. _screenshots: http://www.turnkeylinux.org/screenshots/148
-.. _ISO images: http://www.turnkeylinux.org/docs/builds#iso
-.. _Virtual Machine images: http://www.turnkeylinux.org/docs/builds#vm
-.. _Amazon Machine Image (AMI): http://www.turnkeylinux.org/docs/ec2
+.. _screenshots: https://www.turnkeylinux.org/screenshots/148
+.. _ISO images: https://www.turnkeylinux.org/docs/builds#iso
+.. _Virtual Machine images: https://www.turnkeylinux.org/docs/builds#vm
+.. _Amazon Machine Image (AMI): https://www.turnkeylinux.org/docs/ec2
 .. _TurnKey Hub: https://hub.turnkeylinux.org
-.. _AMI codes: http://www.turnkeylinux.org/docs/ec2/ami
-.. _TKLBAM: http://www.turnkeylinux.org/tklbam
-.. _Auto-updated: http://www.turnkeylinux.org/docs/automatic-security-updates
-.. _HubDNS: http://www.turnkeylinux.org/dns
+.. _AMI codes: https://www.turnkeylinux.org/docs/ec2/ami
+.. _TKLBAM: https://www.turnkeylinux.org/tklbam
+.. _Auto-updated: https://www.turnkeylinux.org/docs/automatic-security-updates
+.. _HubDNS: https://www.turnkeylinux.org/dns
 .. _LVM: http://tldp.org/HOWTO/LVM-HOWTO/
 .. _shellinabox: http://code.google.com/p/shellinabox/
 .. _Webmin: http://webmin.com/
 .. _confconsole: https://github.com/turnkeylinux/confconsole
 .. _inithooks: https://github.com/turnkeylinux/inithooks
-.. _shell hooks: http://www.turnkeylinux.org/blog/generic-shell-hooks
+.. _shell hooks: https://www.turnkeylinux.org/blog/generic-shell-hooks
