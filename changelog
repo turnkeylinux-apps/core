@@ -29,7 +29,7 @@ turnkey-core-14.0 (1) turnkey; urgency=low
     - TurnKey initialization fence HTTPS encryption warning explanation.
     - Improved SSH key regeneration.
     - Added system notifications and critical security alerts hook.
-    - Added turnkey-sudoadmin (configur system to use sudo admin user).
+    - Added turnkey-sudoadmin (configure system to use sudo admin user).
     - Added hostname configuration hook.
     - Added autogrow filesystem hook.
     - Added IP configuration hook.
