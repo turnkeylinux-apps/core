@@ -13,11 +13,11 @@ Features:
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
   OpenStack, VMWare, VirtualBox, OpenVZ, KVM, Xen) and in the cloud.
    
-   - `ISO images`_: Generic installable Live CD. Installs anywhere.
-   - `Virtual Machine images`_: Optimized for virtualized hardware,
-     pre-installed and ready to run.
-   - `Amazon Machine Image (AMI)`_: Best launched via the `TurnKey
-     Hub`_.
+  - `ISO images`_: Generic installable Live CD. Installs anywhere.
+  - `Virtual Machine images`_: Optimized for virtualized hardware,
+    pre-installed and ready to run.
+  - `Amazon Machine Image (AMI)`_: Best launched via the `TurnKey
+    Hub`_.
 
 - **Smart backups** (`TKLBAM`_): Automated backup and restore, with
   system migration capabilities.
@@ -32,58 +32,58 @@ Features:
   any web browser.
 - **Web management interface** (`Webmin`_):
    
-   - Listens on port 12321 (uses SSL).
-   - Mac OS X themed.
-   - Network modules:
-      
-      - Firewall configuration (with example configuration).
-      - Network configuration.
+  - Listens on port 12321 (uses SSL).
+  - Mac OS X themed.
+  - Network modules:
+     
+    - Firewall configuration (with example configuration).
+    - Network configuration.
 
-   -  System modules:
-      
-      - Backup and migration (TKLBAM).
-      - Configure time, date and timezone.
-      - Configure users and groups.
-      - Manage software packages.
-      - Change passwords.
-      - System logs.
+  -  System modules:
+     
+     - Backup and migration (TKLBAM).
+     - Configure time, date and timezone.
+     - Configure users and groups.
+     - Manage software packages.
+     - Change passwords.
+     - System logs.
 
-   -  Tool modules:
-      
-      - Text editor.
-      - Shell commands.
-      - Simple file upload/download.
-      - File manager (needs support for Java in browser).
-      - Custom commands.
+  -  Tool modules:
+     
+     - Text editor.
+     - Shell commands.
+     - Simple file upload/download.
+     - File manager (needs support for Java in browser).
+     - Custom commands.
 
-   -  Hardware modules:
-      
-      - Partitions on local disks.
-      - Logical volume management.
+  -  Hardware modules:
+     
+     - Partitions on local disks.
+     - Logical volume management.
 
 - **Simple configuration console** (`confconsole`_):
    
-   - Displays basic usage information.
-   - Configure networking.
+  - Displays basic usage information.
+  - Configure networking.
 
 - **First boot initialization** (`inithooks`_):
    
-   - Prompt user for passwords.
-   - Regenerates SSL and SSH cryptographic keys.
-   - Installs latest security updates, unless user chooses to defer this
-     for later.
+  - Prompt user for passwords.
+  - Regenerates SSL and SSH cryptographic keys.
+  - Installs latest security updates, unless user chooses to defer this
+    for later.
 
 - **Command line power tools**
    
-   - Smart, programmable bash shell completion: helps you get more done
-     with fewer keystrokes.
-   - Support for $HOME/.bashrc.d `shell hooks`_
-   - Persistent environment variables (see $HOME/.bashrc.d/penv)::
+  - Smart, programmable bash shell completion: helps you get more done
+    with fewer keystrokes.
+  - Support for $HOME/.bashrc.d `shell hooks`_
+  - Persistent environment variables (see $HOME/.bashrc.d/penv)::
 
-        penv-set pydoc /usr/share/doc/python2.6/html
-        exit
-        # later...
-        cd $pydoc
+       penv-set pydoc /usr/share/doc/python2.6/html
+       exit
+       # later...
+       cd $pydoc
 
 - **Automatic time synchronization with NTP**
 
