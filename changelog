@@ -270,7 +270,7 @@ turnkey-core-11.1 (1) turnkey; urgency=low
     - Includes auto-apt-archive to configure the closest APT package
       archive, determined via the TurnKey Hub GeoIP service.
     - All relevant inithooks can be preseeded, refer to:
-      http://www.turnkeylinux.org/docs/inithooks
+      https://www.turnkeylinux.org/docs/inithooks
           
   * Configuration Console (confconsole):
 
