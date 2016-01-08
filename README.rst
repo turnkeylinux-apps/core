@@ -87,7 +87,45 @@ Features:
 
 - **Automatic time synchronization with NTP**
 
+Logging in for Administration
+-----------------------------
+
+**No default passwords**: For security reasons there are no default
+passwords. All passwords are set at system initialization, which happens
+either at:
+
+1) First login for `headless build types`_ (e.g., EC2, OpenStack, Xen)
+2) First boot for non-headless build types (ISO, VM, VMDK)
+
+**Username for OS administration**:
+
+  Login as **root** except on `AWS marketplace`_ which uses username
+  **admin**.
+
+  1) Point your browser to:
+
+     - https://1.2.3.4:12321/ - Web management interface 
+     - https://1.2.3.4:12320/ - AJAX web terminal
+       
+     *Ignore SSL browser warning*: browsers don't like self signed SSL
+     certificates, but this is the only kind that can be generated
+     automatically without paying a commercial Certificate Authority. 
+  
+  2) Login with SSH client::
+  
+      ssh root@1.2.3.4
+
+     Special case for AWS marketplace::
+
+      ssh admin@1.2.3.4 
+      
+  \* Replace 1.2.3.4 with a valid IP or hostname.
+  
+.. link to read more
+
+.. _AWS marketplace: https://aws.amazon.com/marketplace
 .. _screenshots: https://www.turnkeylinux.org/screenshots/148
+.. _headless build types: https://www.turnkeylinux.org/docs/builds#builds-table
 .. _ISO images: https://www.turnkeylinux.org/docs/builds#iso
 .. _Virtual Machine images: https://www.turnkeylinux.org/docs/builds#vm
 .. _Amazon Machine Image (AMI): https://www.turnkeylinux.org/docs/ec2
@@ -97,7 +135,7 @@ Features:
 .. _Auto-updated: https://www.turnkeylinux.org/docs/automatic-security-updates
 .. _HubDNS: https://www.turnkeylinux.org/dns
 .. _LVM: http://tldp.org/HOWTO/LVM-HOWTO/
-.. _shellinabox: http://code.google.com/p/shellinabox/
+.. _shellinabox: https://github.com/shellinabox/shellinabox
 .. _Webmin: http://webmin.com/
 .. _confconsole: https://github.com/turnkeylinux/confconsole
 .. _inithooks: https://github.com/turnkeylinux/inithooks
