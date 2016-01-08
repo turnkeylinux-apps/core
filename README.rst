@@ -104,8 +104,8 @@ either at:
 
   1) Point your browser to:
 
-     - https://1.2.3.4:12321/ - Web management interface 
-     - https://1.2.3.4:12320/ - AJAX web terminal
+     - https://12.34.56.789:12321/ - Web management interface 
+     - https://12.34.56.789:12320/ - AJAX web terminal
        
      *Ignore SSL browser warning*: browsers don't like self signed SSL
      certificates, but this is the only kind that can be generated
@@ -113,13 +113,13 @@ either at:
   
   2) Login with SSH client::
   
-      ssh root@1.2.3.4
+      ssh root@12.34.56.789
 
      Special case for AWS marketplace::
 
-      ssh admin@1.2.3.4 
+      ssh admin@12.34.56.789 
       
-  \* Replace 1.2.3.4 with a valid IP or hostname.
+  \* Replace 12.34.56.789 with a valid IP or hostname.
   
 .. link to read more
 
