@@ -97,7 +97,11 @@ either at:
 1) First login for `headless build types`_ (e.g., EC2, OpenStack, Xen)
 2) First boot for non-headless build types (ISO, VM, VMDK)
 
-**Username for OS administration**:
+**Ignore SSL browser warning**: browsers don't like self signed SSL
+certificates, but this is the only kind that can be generated
+automatically without paying a commercial Certificate Authority. 
+
+**Username for OS system administration**:
 
   Login as **root** except on `AWS marketplace`_ which uses username
   **admin**.
@@ -107,10 +111,6 @@ either at:
      - https://12.34.56.789:12321/ - Web management interface 
      - https://12.34.56.789:12320/ - AJAX web terminal
        
-     *Ignore SSL browser warning*: browsers don't like self signed SSL
-     certificates, but this is the only kind that can be generated
-     automatically without paying a commercial Certificate Authority. 
-  
   2) Login with SSH client::
   
       ssh root@12.34.56.789
