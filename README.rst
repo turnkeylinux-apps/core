@@ -10,6 +10,8 @@ email alerts.
 
 Features:
 
+- **Base Operating System**: Debian GNU/Linux 8 (Jessie).
+
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
   OpenStack, VMWare, VirtualBox, OpenVZ, KVM, Xen) and in the cloud.
    
@@ -19,11 +21,9 @@ Features:
   - `Amazon Machine Image (AMI)`_: Best launched via the `TurnKey
     Hub`_.
 
-- **Base distribution**: Debian 8 (Jessie).
-
-- **Free from hidden backdoors and vendor lock-in**: transparent 100%
-  open source build of Debian GNU/Linux with no proprietary components
-  or secret sauce.
+- **Free as in speech**: `free software`_ with `full source code`_ and a
+  `powerful build system`_. Free of hidden backdoors, free from
+  restrictive licensing and free to learn from, modify and distribute.
 
 - **Secure and easy to maintain**: `Auto-updated daily`_ with latest
   Debian security patches. Optional monitoring and email notification of
@@ -108,6 +108,9 @@ Credentials *(passwords set at first boot)*
 
 -  Webmin, SSH, Shellinabox: username **root**
 
+.. _free software: https://www.turnkeylinux.org/license
+.. _full source code: https://github.com/turnkeylinux-apps
+.. _powerful build system: https://www.turnkeylinux.org/tkldev
 .. _system alerts: https://www.turnkeylinux.org/docs/automatic-security-alerts
 .. _screenshots: https://www.turnkeylinux.org/screenshots/148
 .. _headless build types: https://www.turnkeylinux.org/docs/builds#builds-table
