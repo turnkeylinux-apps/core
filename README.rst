@@ -1,15 +1,15 @@
-TurnKey Core - Common Base for All Appliances
-=============================================
+TurnKey Core - Debian GNU/Linux with Batteries Included
+=======================================================
 
-The common base system on top of which all TurnKey Linux appliances are
-built. It includes custom automated backup and migration software, a web
-management interface, automatic daily security updates, live installer,
-configuration console, and all other common features. Take a look at
-some `screenshots`_.
+TurnKey Core is the base operating system which all TurnKey GNU/Linux
+solutions share in common. It is commonly deployed standalone as a
+convenient starting point for custom system integrations. Benefits
+include automatic daily security updates, 1-click backup and restore, a
+web control panel, and preconfigured system monitoring with optional
+email alerts.
 
 Features:
 
-- **Base distribution**: Debian 8 (Jessie).
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
   OpenStack, VMWare, VirtualBox, OpenVZ, KVM, Xen) and in the cloud.
    
@@ -19,17 +19,31 @@ Features:
   - `Amazon Machine Image (AMI)`_: Best launched via the `TurnKey
     Hub`_.
 
-- **Smart backups** (`TKLBAM`_): Automated backup and restore, with
-  system migration capabilities.
-- **Secure and easy to maintain**: `Auto-updated`_ daily with latest
-  security patches.
+- **Base distribution**: Debian 8 (Jessie).
+
+- **Free from hidden backdoors and vendor lock-in**: transparent 100%
+  open source build of Debian GNU/Linux with no proprietary components
+  or secret sauce.
+
+- **Secure and easy to maintain**: `Auto-updated daily`_ with latest
+  Debian security patches. Optional monitoring and email notification of
+  `system alerts`_.
+
+- **1-click backup and restore** (`TKLBAM`_): smart backup and data
+  migration software saves changes to files, databases and package
+  management to encrypted storage which a system can be automatically
+  restored from.
+  
 - **Dynamic DNS** (`HubDNS`_): Associates your IP with a custom domain
   or the free \*.tklapp.com domain.
+
 - **Logical Volume Management** (`LVM`_): Instead of installing to a
   fixed size partition, a Logical Volume is first created by default,
   and this may later be expanded, even across multiple physical devices.
+
 - **AJAX web shell** (`shellinabox`_) - secure command line access from
   any web browser.
+
 - **Web management interface** (`Webmin`_):
    
   - Listens on port 12321 (uses SSL).
@@ -87,11 +101,14 @@ Features:
 
 - **Automatic time synchronization with NTP**
 
+- Take a look at some `screenshots`_.
+
 Credentials *(passwords set at first boot)*
 -------------------------------------------
 
 -  Webmin, SSH, Shellinabox: username **root**
 
+.. _system alerts: https://www.turnkeylinux.org/docs/automatic-security-alerts
 .. _screenshots: https://www.turnkeylinux.org/screenshots/148
 .. _headless build types: https://www.turnkeylinux.org/docs/builds#builds-table
 .. _ISO images: https://www.turnkeylinux.org/docs/builds#iso
@@ -100,7 +117,7 @@ Credentials *(passwords set at first boot)*
 .. _TurnKey Hub: https://hub.turnkeylinux.org
 .. _AMI codes: https://www.turnkeylinux.org/docs/ec2/ami
 .. _TKLBAM: https://www.turnkeylinux.org/tklbam
-.. _Auto-updated: https://www.turnkeylinux.org/docs/automatic-security-updates
+.. _Auto-updated daily: https://www.turnkeylinux.org/docs/automatic-security-updates
 .. _HubDNS: https://www.turnkeylinux.org/dns
 .. _LVM: http://tldp.org/HOWTO/LVM-HOWTO/
 .. _shellinabox: https://github.com/shellinabox/shellinabox
