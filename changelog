@@ -1,3 +1,21 @@
+turnkey-core-14.1 (1) turnkey; urgency=low
+
+  * Installed all Debian security updates.
+
+  * Installed updated packages from TurnKey repo
+    - Webmin - Update to 1.780 [#496].
+    - Webmin - Install new HTML5 file manager.
+    - Confconsole - now handles bridged LXC net config.
+    - Inithooks - email regex now less demanding [#155].
+    - Inithooks - ssh message on root login attempt (under sudoadmin)
+      to a TKL EC2 instance like Debian does [#541].
+    - Inithooks - improved container fence firstboot console output [#570].
+
+  * turnkey-make-ssl-cert now leaks the least amount of info possible 
+    [#572].
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 25 Feb 2016 00:28:44 +1100
+
 turnkey-core-14.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Jessie 8.1.
