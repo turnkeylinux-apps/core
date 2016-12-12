@@ -1,3 +1,4 @@
 Web shell:  https://$ipaddr:12320
 Webmin:     https://$ipaddr:12321
+Monit:      https://$ipaddr:12323
 SSH/SFTP:   root@$ipaddr (port 22)
