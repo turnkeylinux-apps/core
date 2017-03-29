@@ -1,3 +1,51 @@
+turnkey-core-14.2 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian Jessie 8.7.
+
+  * Webmin (web based administration):
+
+    - Update to 1.831 (includes fix for [#493]).
+
+  * Confconsole (configuration console - console based admin):
+
+    - significant refactoring to support "Advanced" plugins [#369].
+    - Included new plugins:
+
+      - Region Config >> Locales/Keyboard/Tzdata [#14, #38, #746, 
+        #770, #771].
+      - Proxy Settings >> Apt proxy [#203].
+      - System Settings >> Set hostname [#180, #450, #765, #795].
+      - Mail relay - SMTP email relay config [#482].
+      - Let's Encrypt SSL certs (via Dehydrated) [#546, #766, #767].
+
+        - includes install of dehydrated (from jessie-backports).
+
+  * Inithooks (firstboot initialization):
+
+      - make secalerts more robust [#532].
+      - password complexity requirements explicitly stated [#556].
+
+  * di-live (TurnKey installer):
+
+      - resolved LVM install bug [#782].
+      - di-live - reordered install options so install to LVM is 
+        default [#791].
+
+  * TKLBAM (backup and migration tool):
+
+      - various bugfixes and improvements.
+
+  * miscellaneous:
+
+      - tweaked turnkey-make-ssl-cert for improved code styling and
+        functionality.
+      - fixed Monit configuration [#603].
+      - update default apt URLs to httpredir.debian.org [#742].
+      - removed core package from all builds (except core) [#762].
+      - improved default vim-tiny config [#763].
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 29 Mar 2017 12:41:10 +1100
+
 turnkey-core-14.1 (1) turnkey; urgency=low
 
   * Installed all Debian security updates.
