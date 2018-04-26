@@ -1,3 +1,94 @@
+turnkey-core-15.0-rc1 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian 9.4/Stretch.
+
+  * TurnKey Backup and Migration (tklbam):
+
+    - package and dependencies are now reproducible (security)
+      [ Chris Lamb ]
+    - backup update fix - new dependency for Stretch; gnupg (closes #962)
+      [ Ken Robinson ]
+    - restore update fix - ensure patches are applied to tklbam-squid source
+      code (TurnKey squid fork) (closes #970)
+      [ Ken Robinson (troubleshooting) & Chris Lamb (fix) ]
+
+  * Installer (di-live):
+
+    - package is now reproducible (security)
+      [ Chris Lamb ]
+
+  * Live environment (casper):
+
+    - package is now reproducible (security)
+      [ Chris Lamb ]
+    - update to support overlayFS (default layering filesystem in stretch)
+      [ Stefan Davis ]
+
+  * Configuration console (confconsole):
+
+    - general:
+      - package is now reproducible (security)
+        [ Chris Lamb ]
+
+    - Networking:
+      - fix for static IP not sticking (since upgrade to stretch base)
+        (closes #952)
+
+    - Let's Encrypt plugin:
+      - install 'dehydrated' (ACME client) from Debian main repo (previously
+        installed from jessie-backports)
+      - significant refatoring of plugin
+      - support for multiple domains (closes #843)
+      - fix for updated ACME ToS; including dynamically discovered latest ToS;
+        inc dialog display of url for current ToS (closes #976)
+      - update dialog and readme for Debian Stretch (closes #1061)
+        [ Stefan Davis ]
+
+  * Web management console (webmin):
+
+    - upgraded webmin to v1.881
+    - package is reproducible (no changes required) (security)
+    - resolve stretch related install problem (closes #920)
+      [ Ken Robinson ]
+    - new default theme, uses upstream default; 'Authentic' (closes #781)
+    - TurnKey theme customizations; TurnKey logos, default to show TKLBAM
+      module on login
+    - remove webmin-file (java based filemanager) module (closes #965)
+    - remove webmin-texteditor module (upstream)
+    - add convience symlinks to useful Webmin logs (in /var/log/webmin)
+
+  * Web shell (shellinabox):
+
+    - install v2.20 direct from Debian main repo (no longer maintaining our
+      own fork) (closes #918)
+    - version from Debian displays ncurses dialog properly (closes #317)
+
+  * Security hardening:
+    [ John Carver ]
+
+    - default config mods for:
+      - postfix
+      - ssh
+      - kernel sysctl variables
+        - inc easy option to override (via /etc/sysctl.conf)
+
+  * Miscellaneous:
+
+    - update to support overlayFS (default layering filesystem in stretch)
+    - default to SystemD init system for all builds
+    - use traditional network interface names, e.g. 'eth0' (disable stretch
+      default of "Predictable Network Interface Names")
+    - 'dpkg-vendor --query Vendor' now returns 'TurnKey` (closes #196)
+    - include fail2ban in all appliances (closes #630 & #991)
+      - MVP uses default Debian conf, protects SSH only
+    - use http://deb.debian.org as Debian url in sources.list - as
+      recommended by Debian (closes #927)
+    - upstream fix for MOTD not being updated dynamically (closes #1024 
+      & #1024)
+      [ Stefan Davis ]
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 26 Apr 2018 09:17:31 +1000
+
 turnkey-core-14.2 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Jessie 8.7.
