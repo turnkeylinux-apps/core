@@ -1,4 +1,4 @@
-turnkey-core-15.0-rc1 (1) turnkey; urgency=low
+turnkey-core-15.0rc1 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 9.4/Stretch.
 
