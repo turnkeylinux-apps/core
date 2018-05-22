@@ -44,6 +44,16 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
       - update dialog and readme for Debian Stretch (closes #1061)
         [ Stefan Davis ]
 
+  * Firstboot Initialization (inithooks):
+
+    - Updates for headless builds especially LXC/Proxmox:
+      - include specific inithooks-lxc.service file - initialization SystemD
+        service that works reliably inside an LXC container (and doesn't effect
+        other builds) (closes #1071)
+      - force non-interactive dpkg-reconfigure of openssh-server (closes #1085)
+      - updated initfence index page to note that webshell not avaialble 
+        (closes #1087)
+
   * Web management console (webmin):
 
     - upgraded webmin to v1.881
@@ -71,6 +81,13 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
       - ssh
       - kernel sysctl variables
         - inc easy option to override (via /etc/sysctl.conf)
+
+  * Optimized builds (buildtasks):
+
+    - VM builds (OVA & VMDK):
+      - include open-vm-tools-dkms & linux-headers-amd64 in base builds (closes
+        #1001)
+        [ Stefan Davis ]
 
   * Miscellaneous:
 
