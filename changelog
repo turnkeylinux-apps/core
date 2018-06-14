@@ -65,13 +65,17 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
       module on login
     - remove webmin-file (java based filemanager) module (closes #965)
     - remove webmin-texteditor module (upstream)
+    - include webmin-fail2ban module
     - add convience symlinks to useful Webmin logs (in /var/log/webmin)
+    - reconfigure webmin-raid & webmin-lvm modules during build (workaround
+      for #1091)
 
   * Web shell (shellinabox):
 
     - install v2.20 direct from Debian main repo (no longer maintaining our
       own fork) (closes #918)
     - version from Debian displays ncurses dialog properly (closes #317)
+    - white on black default webshell (aka shellinabox) theme (closes #1060)
 
   * Security hardening:
     [ John Carver ]
@@ -100,11 +104,10 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
       - MVP uses default Debian conf, protects SSH only
     - use http://deb.debian.org as Debian url in sources.list - as
       recommended by Debian (closes #927)
-    - upstream fix for MOTD not being updated dynamically (closes #1024 
-      & #1024)
+    - upstream fix for MOTD not being updated dynamically (closes #1024)
       [ Stefan Davis ]
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 26 Apr 2018 09:17:31 +1000
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 01 Jun 2018 17:01:59 +1000
 
 turnkey-core-14.2 (1) turnkey; urgency=low
 
