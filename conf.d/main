@@ -1,4 +1,2 @@
 #!/bin/sh -ex
 echo "do nothing - core requires no post-package configuration commands"
-
-dpkg -i /root/inithooks_0.9+*.deb
