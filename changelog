@@ -1,4 +1,4 @@
-turnkey-core-15.0rc1 (1) turnkey; urgency=low
+turnkey-core-15.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 9.4/Stretch.
 
@@ -46,10 +46,13 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
 
   * Firstboot Initialization (inithooks):
 
-    - Updates for headless builds especially LXC/Proxmox:
+    - Updates for headless builds especially LXC/Proxmox & Xen:
       - include specific inithooks-lxc.service file - initialization SystemD
         service that works reliably inside an LXC container (and doesn't effect
         other builds) (closes #1071)
+      - include specific inithooks-xen.service file - initialization SystemD
+        service that works reliably with the Xen console (and doesn't effect
+        other builds)
       - force non-interactive dpkg-reconfigure of openssh-server (closes #1085)
       - updated initfence index page to note that webshell not avaialble 
         (closes #1087)
@@ -69,6 +72,10 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
     - add convience symlinks to useful Webmin logs (in /var/log/webmin)
     - reconfigure webmin-raid & webmin-lvm modules during build (workaround
       for #1091)
+
+  * TurnKey AMQ (tklamq) - only applies to Hub builds:
+
+    - python-carrot deprecated, move to dependency on python-kombu
 
   * Web shell (shellinabox):
 
@@ -107,7 +114,7 @@ turnkey-core-15.0rc1 (1) turnkey; urgency=low
     - upstream fix for MOTD not being updated dynamically (closes #1024)
       [ Stefan Davis ]
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 01 Jun 2018 17:01:59 +1000
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 19 Jun 2018 12:35:59 +1000
 
 turnkey-core-14.2 (1) turnkey; urgency=low
 
