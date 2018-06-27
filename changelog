@@ -16,6 +16,8 @@ turnkey-core-15.0 (1) turnkey; urgency=low
 
     - package is now reproducible (security)
       [ Chris Lamb ]
+    - fix di-live failing to install from live system (closes #1041)
+      [ Stefan Davis ]
 
   * Live environment (casper):
 
@@ -56,6 +58,8 @@ turnkey-core-15.0 (1) turnkey; urgency=low
       - force non-interactive dpkg-reconfigure of openssh-server (closes #1085)
       - updated initfence index page to note that webshell not avaialble 
         (closes #1087)
+      - fix edge case bug where turnkey-sudoadmin would incorrectly adjust
+        services.txt (closes #1124)
 
   * Web management console (webmin):
 
