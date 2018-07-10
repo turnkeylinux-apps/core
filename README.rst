@@ -10,10 +10,10 @@ email alerts.
 
 Features:
 
-- **Base Operating System**: Debian GNU/Linux 8 (Jessie).
+- **Base Operating System**: Debian GNU/Linux 9 (Stretch).
 
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
-  OpenStack, VMWare, VirtualBox, OpenVZ, KVM, Xen) and in the cloud.
+  OpenStack, VMWare, VirtualBox, LXC, KVM, Xen) and in the cloud.
    
   - `ISO images`_: Generic installable Live CD. Installs anywhere.
   - `Virtual Machine images`_: Optimized for virtualized hardware,
@@ -47,7 +47,7 @@ Features:
 - **Web management interface** (`Webmin`_):
    
   - Listens on port 12321 (uses SSL).
-  - Mac OS X themed.
+  - Modern responsive theme.
   - Network modules:
      
     - Firewall configuration (with example configuration).
@@ -79,6 +79,11 @@ Features:
    
   - Displays basic usage information.
   - Configure networking.
+  - Let's Encrypt SSL/TLS certificates.
+  - Mail SMTP relay setup.
+  - Proxy settings.
+  - Region and timezone.
+  - Other global system settings.
 
 - **First boot initialization** (`inithooks`_):
    
@@ -94,7 +99,7 @@ Features:
   - Support for $HOME/.bashrc.d `shell hooks`_
   - Persistent environment variables (see $HOME/.bashrc.d/penv)::
 
-       penv-set pydoc /usr/share/doc/python2.6/html
+       penv-set pydoc /usr/share/doc/python2.7/html
        exit
        # later...
        cd $pydoc
@@ -125,6 +130,6 @@ Credentials *(passwords set at first boot)*
 .. _LVM: http://tldp.org/HOWTO/LVM-HOWTO/
 .. _shellinabox: https://github.com/shellinabox/shellinabox
 .. _Webmin: http://webmin.com/
-.. _confconsole: https://github.com/turnkeylinux/confconsole
+.. _confconsole: https://www.turnkeylinux.org/docs/confconsole
 .. _inithooks: https://github.com/turnkeylinux/inithooks
 .. _shell hooks: https://www.turnkeylinux.org/blog/generic-shell-hooks
