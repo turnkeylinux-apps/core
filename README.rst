@@ -18,7 +18,7 @@ Features:
   - `ISO images`_: Generic installable Live CD. Installs anywhere.
   - `Virtual Machine images`_: Optimized for virtualized hardware,
     pre-installed and ready to run.
-  - `Amazon Machine Image (AMI)`_: Best launched via the `TurnKey
+  - Amazon Machine Image (AMI): Best launched via the `TurnKey
     Hub`_.
 
 - **Free as in speech**: `free software`_ with `full source code`_ and a
@@ -41,13 +41,13 @@ Features:
   fixed size partition, a Logical Volume is first created by default,
   and this may later be expanded, even across multiple physical devices.
 
-- **AJAX web shell** (`shellinabox`_) - secure command line access from
+- **AJAX web shell (Web CLI)** (`shellinabox`_) - secure command line access from
   any web browser.
 
-- **Web management interface** (`Webmin`_):
+- **Web management interface (WebUI)** (`Webmin`_):
    
   - Listens on port 12321 (uses SSL).
-  - Modern responsive theme.
+  - Modern responsive theme: 'Authentic'.
   - Network modules:
      
     - Firewall configuration (with example configuration).
@@ -65,9 +65,9 @@ Features:
   -  Tool modules:
      
      - Text editor.
-     - Shell commands.
+     - Shell commands (note not proper interactive shell).
      - Simple file upload/download.
-     - File manager (needs support for Java in browser).
+     - File manager (HTML5).
      - Custom commands.
 
   -  Hardware modules:
@@ -75,7 +75,7 @@ Features:
      - Partitions on local disks.
      - Logical volume management.
 
-- **Simple configuration console** (`confconsole`_):
+- **Simple configuration console (cli)** (`confconsole`_):
    
   - Displays basic usage information.
   - Configure networking.
@@ -121,15 +121,14 @@ Credentials *(passwords set at first boot)*
 .. _headless build types: https://www.turnkeylinux.org/docs/builds#builds-table
 .. _ISO images: https://www.turnkeylinux.org/docs/builds#iso
 .. _Virtual Machine images: https://www.turnkeylinux.org/docs/builds#vm
-.. _Amazon Machine Image (AMI): https://www.turnkeylinux.org/docs/ec2
 .. _TurnKey Hub: https://hub.turnkeylinux.org
 .. _AMI codes: https://www.turnkeylinux.org/docs/ec2/ami
 .. _TKLBAM: https://www.turnkeylinux.org/tklbam
 .. _Auto-updated daily: https://www.turnkeylinux.org/docs/automatic-security-updates
 .. _HubDNS: https://www.turnkeylinux.org/dns
-.. _LVM: http://tldp.org/HOWTO/LVM-HOWTO/
+.. _LVM: https://tldp.org/HOWTO/LVM-HOWTO/
 .. _shellinabox: https://github.com/shellinabox/shellinabox
-.. _Webmin: http://webmin.com/
-.. _confconsole: https://www.turnkeylinux.org/docs/confconsole
+.. _confconsole: https://www.turnkeylinux.org/docs/confconsole#main-screen-and-basic-functionality
+.. _Webmin: https://webmin.com/
 .. _inithooks: https://github.com/turnkeylinux/inithooks
 .. _shell hooks: https://www.turnkeylinux.org/blog/generic-shell-hooks
