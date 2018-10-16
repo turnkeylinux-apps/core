@@ -51,16 +51,22 @@ Command Line
 
 1.
     First we should check the current iptable rules for port 12321 to do this type
-    the following:::
+    the following:
     
+    .. code:: bash
+
         iptables -S INPUT | grep -- '--dport 12321'
 
-    With default turnkey config you should get the following as output:::
+    With default turnkey config you should get the following as output:
+
+    .. code:: bash
 
         -A INPUT -p tcp -m tcp --dport 12321 -j ACCEPT
 
 2.
-    Next run:::
+    Next run:
+
+    .. code:: bash
 
         iptables -L INPUT --line-numbers
 
@@ -90,16 +96,22 @@ Command Line
     and insert ``-s <the.ip.we.want.to.allow>`` and remove the ``-A INPUT`` prefix.
     It should look as follows assuming you're running a clean turnkeylinux installation.
 
-    ``-s 1.2.3.4 -p tcp -m tcp --dport 12321 -j ACCEPT``
+    .. code:: bash
+
+        -s 1.2.3.4 -p tcp -m tcp --dport 12321 -j ACCEPT
 
 
     now we need to tell iptables to replace entry number 8, so we pass the arguments
-    we just constructed to iptables as follows:::
+    we just constructed to iptables as follows:
+
+    .. code:: bash
 
         iptables -R INPUT 8 -s 1.2.3.4 -p tcp -m tcp --dport 12321 -j ACCEPT
 
 4.
     Lastly we need to ensure these settings will persist after a reboot. To do so
-    run the following:::
+    run the following:
    
+    .. code:: bash
+
         iptables-save > /etc/iptables.up.rules
