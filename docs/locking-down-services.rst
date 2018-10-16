@@ -51,17 +51,24 @@ Command Line
 
 1.
     First we should check the current iptable rules for port 12321 to do this type
-    ``iptables -S INPUT | grep -- '--dport 12321'`` into the cli. With default turnkey
-    config you should get the following as output:
-    ``-A INPUT -p tcp -m tcp --dport 12321 -j ACCEPT``
+    the following:::
+    
+        iptables -S INPUT | grep -- '--dport 12321'
+
+    With default turnkey config you should get the following as output:::
+
+        -A INPUT -p tcp -m tcp --dport 12321 -j ACCEPT
 
 2.
-    Next run ``iptables -L INPUT --line-numbers``, this will give you a listing of all
-    iptable rules in the chain INPUT. Find the line which mentions 12321 (it should be
-    on the right-most column), then find the line number associated with it (on the
-    leftmost column).
+    Next run:::
 
-    In my case I get:
+        iptables -L INPUT --line-numbers
+
+    this will give you a listing of all iptable rules in the chain INPUT.
+    Find the line which mentions 12321 (it should be on the right-most column),
+    then find the line number associated with it (on the leftmost column).
+
+    In my case I get:::
 
         Chain INPUT (policy DROP)
         num  target     prot opt source               destination         
@@ -87,10 +94,12 @@ Command Line
 
 
     now we need to tell iptables to replace entry number 8, so we pass the arguments
-    we just constructed to iptables as follows.
+    we just constructed to iptables as follows:::
 
-    ``iptables -R INPUT 8 -s 1.2.3.4 -p tcp -m tcp --dport 12321 -j ACCEPT``
+        iptables -R INPUT 8 -s 1.2.3.4 -p tcp -m tcp --dport 12321 -j ACCEPT
 
 4.
     Lastly we need to ensure these settings will persist after a reboot. To do so
-    run the following: ``iptables-save > /etc/iptables.up.rules``
+    run the following:::
+   
+        iptables-save > /etc/iptables.up.rules
