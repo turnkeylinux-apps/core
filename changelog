@@ -1,10 +1,10 @@
 turnkey-core-16.0 (1) turnkey; urgency=low
 
-  * Upgraded base distribution to Debian 10.0/Buster.
+  * Upgraded base distribution to Debian 10.3/Buster.
 
   * TurnKey Backup and Migration (tklbam):
 
-    - package and dependencies rebuilt against Debian 10/Buster.
+    - package and dependencies rebuilt against Debian 10.3/Buster.
 
   * Configuration console (confconsole):
 
@@ -20,7 +20,7 @@ turnkey-core-16.0 (1) turnkey; urgency=low
 
   * Web management console (webmin):
 
-    - upgraded webmin to v1.xxx ## XXX NEEDS UPDATING ##
+    - upgraded webmin to v1.941
     [ Jeremy Davis ]
 
   * Installer (di-live):
@@ -29,7 +29,7 @@ turnkey-core-16.0 (1) turnkey; urgency=low
     - update Debian Installer source components (from Debian d-i source).
     - leverage Debian Live Tools for running live and installing (no longer
       requires casper and busybox-initramfs).
-    - major refactoring.
+    - other major refactoring.
     [ Jeremy Davis ]
 
   * Live environment:
@@ -40,7 +40,7 @@ turnkey-core-16.0 (1) turnkey; urgency=low
 
   * MORE STUFF HERE... ## XXX NEEDS UPDATING ###
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 29 Oct 2019 08:37:42 +1000
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 27 Feb 2020 13:15:37 +1000
 
 turnkey-core-15.0 (1) turnkey; urgency=low
 
