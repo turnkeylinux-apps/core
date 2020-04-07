@@ -4,43 +4,83 @@ turnkey-core-16.0 (1) turnkey; urgency=low
 
   * TurnKey Backup and Migration (tklbam):
 
-    - package and dependencies rebuilt against Debian 10.3/Buster.
+    - Fix paths with spaces not working in overrides - closes #1403.
+    [ Stefan Davis ]
+    - Package and dependencies rebuilt against Debian 10.3/Buster.
+    [ Jeremy Davis ]
 
   * Configuration console (confconsole):
 
-    - migrate code to python3.
+    - Migrate code to python3, use default Debian dialog & python3-dialog
+      packages (no longer packaging our own forks).
+    - LE plugin: Completely refactor add-water.
+    - Networking: Add warning when changing ip inside an ssh session.
     [ Stefan Davis ]
+    - No longer run as separate service (launched at first boot by inithooks).
+    - LE plugin: Improve Dehydrated cron job - closes #912.
+    - LE plugin: Backup domains.txt if it exists so can be manually restored
+      if desired. Part of #1365.
+    - LE plugin: Ensure that ACME v2 API endpoint is used everywhere. Part of
+      #1365.
+    - DH params plugin: New plugin for v16.0; update/improve Diffie-Hellman
+      parameters bit size. Closes #575. Part of #1432.
+    - Mail relay plugin: Allow unauthenticated SMTP relay. Closes #844.
+    - Mail relay plugin: Refactoring, improved error handling. Closes #1434.
+    [ Jeremy Davis ]
+    - All plugins updated to python3 and update python-dialog/dialog usage.
+    - Hostname plugin: Do some validation and bugfix implementation. Closes
+      #845.
+    [ Stefan Davis & Jeremy Davis ]
 
   * Firstboot Initialization (inithooks):
 
-    - migrate code to python3.
+    - Migrate code to python3.
     [ Stefan Davis ]
-    - migrate TLS/SSL inithooks from common/overlay into inithooks package.
+    - Migrate TLS/SSL inithooks from common/overlay into inithooks package.
+    - Leverage (refactored/extended) turnkey-make-ssl-cert script to also
+      generate Diffie-Hellman parameters. Part of #1432.
     [ Jeremy Davis ]
 
   * Web management console (webmin):
 
-    - upgraded webmin to v1.941
+    - Upgraded webmin to v1.941
+    - Developed improved systemd webmin.service file.
+    - Individual Webmin stunnel config - easier to disable/enable Webmin &
+      Webshell independantly.
+    [ Jeremy Davis ]
+
+  * Web shell (shellinabox):
+
+    - Individual Webshell stunnel config - easier to disable/enable Webmin &
+      Webshell independantly.
     [ Jeremy Davis ]
 
   * Installer (di-live):
 
-    - migrate code to python3.
-    - update Debian Installer source components (from Debian d-i source).
-    - leverage Debian Live Tools for running live and installing (no longer
+    - Migrate code to python3.
+    - Update Debian Installer source components (from Debian d-i source).
+      Closes #412.
+    - Leverage Debian Live Tools for running live and installing (no longer
       requires casper and busybox-initramfs).
-    - other major refactoring.
+    - Other major refactoring.
     [ Jeremy Davis ]
 
   * Live environment:
 
-    - leverage Debian default live environment (casper and alternate busybox
-      package no longer required; built on default Debian packages).
+    - Leverage Debian default live environment (casper and alternate busybox
+      package no longer required; built on default Debian packages; live-tools
+      & live-boot). Closes #942.
     [ Jeremy Davis ]
 
-  * MORE STUFF HERE... ## XXX NEEDS UPDATING ###
+  * Miscellaneous:
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 27 Feb 2020 13:15:37 +1000
+    - ssh-server: Relax SSH config slightly to reduce issues with fail2ban -
+      closes #1398.
+    - hubtools: Fix hub-list-backups - closes #1173.
+    - turnkey-make-ssl-cert: support (re)generation of Diffie-Hellman
+      parameters. Part of #1432.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 07 Apr 2020 18:44:24 +1000
 
 turnkey-core-15.0 (1) turnkey; urgency=low
 
