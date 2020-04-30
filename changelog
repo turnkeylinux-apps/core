@@ -39,6 +39,11 @@ turnkey-core-16.0 (1) turnkey; urgency=low
     - Migrate TLS/SSL inithooks from common/overlay into inithooks package.
     - Leverage (refactored/extended) turnkey-make-ssl-cert script to also
       generate Diffie-Hellman parameters. Part of #1432.
+    - Option to launch full Confconsole on completetion (defaults to minimal).
+    - Fix error message when password complexity = 4 in dialog_wrapper
+      (previous message was misleading).
+    - Add support for blacklisted characters when setting password via
+      dialog_wrapper.
     [ Jeremy Davis ]
 
   * Web management console (webmin):
