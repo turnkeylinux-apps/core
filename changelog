@@ -1,3 +1,42 @@
+turnkey-core-16.1 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian 10.7/Buster.
+
+  * Configuration console (confconsole):
+
+    - Improvements to networking robustness and error reporting - allow setting
+      ip of previously unconfigured or even to some extent misconfigured
+      networking - closes #1457.
+    [ Stefan Davis & Jeremy Davis ]
+    - Catch socket.gaierror in Mail Relaying - closes #1472.
+    [ Stefan Davis ]
+    - Fixed Confconsole stacktrace on LXC host - closes #1478.
+    [ Stefan Davis ]
+    - Support copy/paste in Confconsole - closes #1545.
+
+  * Firstboot Initialization (inithooks):
+
+    - Add option to turnkey-init to launch full confconsole when finished.
+    - Improve customisation re password complexity and blacklisted chars.
+    - Improve help text and remove buggy code casuing issues in LXC
+      containers - closes #1451.
+    - Only launch Confconcsole at end of run on non-headless builds.
+    - Provide systemd service file for turnkey-init-fence.
+
+  * Web management console (webmin):
+
+    - Updated Webmin to v1.962.
+    - Improved service to make more robust (particularly within LXC) - closes
+      #1480.
+    - Default MySQL user 'adminer' (when 'webmin-mysql' module installed) -
+      closes #1529.
+
+  * Hub Domains client (hubdns):
+
+    - Fixed server DNS mapping not updated on IP change - closes #1508.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 22 Dec 2020 16:40:57 +1100
+
 turnkey-core-16.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 10.3/Buster.
