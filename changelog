@@ -1,18 +1,22 @@
 turnkey-core-16.1 (1) turnkey; urgency=low
 
-  * Upgraded base distribution to Debian 10.7/Buster.
+  * Upgraded base distribution to Debian 10.8/Buster.
 
   * Configuration console (confconsole):
 
     - Improvements to networking robustness and error reporting - allow setting
-      ip of previously unconfigured or even to some extent misconfigured
+      up of previously unconfigured or even to some extent misconfigured
       networking - closes #1457.
     [ Stefan Davis & Jeremy Davis ]
     - Catch socket.gaierror in Mail Relaying - closes #1472.
     [ Stefan Davis ]
-    - Fixed Confconsole stacktrace on LXC host - closes #1478.
+    - Fixed Confconsole stacktrace - closes #1478.
     [ Stefan Davis ]
     - Support copy/paste in Confconsole - closes #1545.
+    - Option to change default auto secupdates issue resolution - closes
+      #1536.
+    - (Apps with MySQL/MariaDB only) Confconsole perf and info schema install
+      option - closes #1429.
 
   * Firstboot Initialization (inithooks):
 
@@ -28,14 +32,32 @@ turnkey-core-16.1 (1) turnkey; urgency=low
     - Updated Webmin to v1.962.
     - Improved service to make more robust (particularly within LXC) - closes
       #1480.
-    - Default MySQL user 'adminer' (when 'webmin-mysql' module installed) -
-      closes #1529.
+    - Set iptables-legacy as default so webmin-firewall works as expected -
+      closes #1488.
+    - (Apps with MySQL/MariaDB/webmin-mysql only) Default MySQL user 'adminer'
+      (when 'webmin-mysql' module installed) - closes #1529.
 
   * Hub Domains client (hubdns):
 
     - Fixed server DNS mapping not updated on IP change - closes #1508.
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 22 Dec 2020 16:40:57 +1100
+  * Misc bugfixes & feature implementations:
+
+    - Add alert for RUN_FIRSTBOOT in motd - closes #1129.
+    - Fix MOTD/turnkey-sysinfo if no network interfaces discovered - closes
+      #1461.
+    - Make root:root & 755 ownership/permsissions of /usr/local default -
+      closes #1440.
+    - Improve 'stunnel4@.service' systemd service template to resolve issues -
+      closes #1513.
+    - (Apps with PHP/Composer only) Automatically clear Composer cache and
+      shallow clone composer installed deps - closes #1541.
+    - (Apss with PHP only) Remove depcreated opcache.fast_shutdown option from
+      config - closes #1538.
+    - (Apps with Adminer only) Give grant privileges to adminer MySQL/MariaDB
+      user- closes #1496.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 05 Feb 2021 08:50:19 +1100
 
 turnkey-core-16.0 (1) turnkey; urgency=low
 
