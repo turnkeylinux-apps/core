@@ -15,6 +15,9 @@ turnkey-core-16.1 (1) turnkey; urgency=low
     - Support copy/paste in Confconsole - closes #1545.
     - Option to change default auto secupdates issue resolution - closes
       #1536.
+    - Include confconsole plugin to allow configuration of confconsole
+      autostart - closes #1561.
+    - Fix Let's Encrypt staging server URL in config - closes #1497.
     - (Apps with MySQL/MariaDB only) Confconsole perf and info schema install
       option - closes #1429.
 
@@ -50,14 +53,16 @@ turnkey-core-16.1 (1) turnkey; urgency=low
       closes #1440.
     - Improve 'stunnel4@.service' systemd service template to resolve issues -
       closes #1513.
+    - Provide (optional) 'eth1' interface configured as "hotplug" - closes
+      #1492.
     - (Apps with PHP/Composer only) Automatically clear Composer cache and
       shallow clone composer installed deps - closes #1541.
-    - (Apss with PHP only) Remove depcreated opcache.fast_shutdown option from
+    - (Apps with PHP only) Remove depcreated opcache.fast_shutdown option from
       config - closes #1538.
     - (Apps with Adminer only) Give grant privileges to adminer MySQL/MariaDB
       user- closes #1496.
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 05 Feb 2021 08:50:19 +1100
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 09 Feb 2021 13:41:47 +1100
 
 turnkey-core-16.0 (1) turnkey; urgency=low
 
