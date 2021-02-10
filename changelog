@@ -55,14 +55,19 @@ turnkey-core-16.1 (1) turnkey; urgency=low
       closes #1513.
     - Provide (optional) 'eth1' interface configured as "hotplug" - closes
       #1492.
-    - (Apps with PHP/Composer only) Automatically clear Composer cache and
+    - (LAMP/LAPP based apps) Only install composer on apps that explictly
+      use it, or where it makes sense (e.g. LAMP & LAPP will include it) -
+      closes #1563.
+    - (Apps with Composer only) Provide turnkey-composer wrapper script so
+      it's easy to not run composer as root - closes #1539.
+    - (Apps with Composer only) Automatically clear Composer cache and
       shallow clone composer installed deps - closes #1541.
     - (Apps with PHP only) Remove depcreated opcache.fast_shutdown option from
       config - closes #1538.
     - (Apps with Adminer only) Give grant privileges to adminer MySQL/MariaDB
       user- closes #1496.
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 09 Feb 2021 13:41:47 +1100
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 10 Feb 2021 15:05:27 +1100
 
 turnkey-core-16.0 (1) turnkey; urgency=low
 
