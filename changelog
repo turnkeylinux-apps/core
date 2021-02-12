@@ -1,3 +1,74 @@
+turnkey-core-16.1 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian 10.8/Buster.
+
+  * Configuration console (confconsole):
+
+    - Improvements to networking robustness and error reporting - allow setting
+      up of previously unconfigured or even to some extent misconfigured
+      networking - closes #1457.
+    [ Stefan Davis & Jeremy Davis ]
+    - Catch socket.gaierror in Mail Relaying - closes #1472.
+    [ Stefan Davis ]
+    - Fixed Confconsole stacktrace - closes #1478.
+    [ Stefan Davis ]
+    - Support copy/paste in Confconsole - closes #1545.
+    - Option to change default auto secupdates issue resolution - closes
+      #1536.
+    - Include confconsole plugin to allow configuration of confconsole
+      autostart - closes #1561.
+    - Fix Let's Encrypt staging server URL in config - closes #1497.
+    - (Apps with MySQL/MariaDB only) Confconsole perf and info schema install
+      option - closes #1429.
+
+  * Firstboot Initialization (inithooks):
+
+    - Add option to turnkey-init to launch full confconsole when finished.
+    - Improve customization re password complexity and blacklisted chars.
+    - Improve help text and remove buggy code causing issues in LXC
+      containers - closes #1451.
+    - Only launch Confconsole at end of run on non-headless builds.
+    - Provide systemd service file for turnkey-init-fence.
+
+  * Web management console (webmin):
+
+    - Updated Webmin to v1.970.
+    - Improved service to make more robust (particularly within LXC) - closes
+      #1480.
+    - Set iptables-legacy as default so webmin-firewall works as expected -
+      closes #1488.
+    - (Apps with MySQL/MariaDB/webmin-mysql only) Default MySQL user 'adminer'
+      (when 'webmin-mysql' module installed) - closes #1529.
+
+  * Hub Domains client (hubdns):
+
+    - Fixed server DNS mapping not updated on IP change - closes #1508.
+
+  * Misc bugfixes & feature implementations:
+
+    - Add alert for RUN_FIRSTBOOT in MOTD - closes #1129.
+    - Fix MOTD/turnkey-sysinfo if no network interfaces discovered - closes
+      #1461.
+    - Make root:root & 755 ownership/permissions of /usr/local default -
+      closes #1440.
+    - Improve 'stunnel4@.service' systemd service template to resolve issues -
+      closes #1513.
+    - Provide (optional) 'eth1' interface configured as "hotplug" - closes
+      #1492.
+    - (LAMP/LAPP based apps) Only install composer on apps that explicitly
+      use it, or where it makes sense (e.g. LAMP & LAPP will include it) -
+      closes #1563.
+    - (Apps with Composer only) Provide turnkey-composer wrapper script so
+      it's easy to not run composer as root - closes #1539.
+    - (Apps with Composer only) Automatically clear Composer cache and
+      shallow clone composer installed deps - closes #1541.
+    - (Apps with PHP only) Remove deprecated opcache.fast_shutdown option from
+      config - closes #1538.
+    - (Apps with Adminer only) Give grant privileges to adminer MySQL/MariaDB
+      user- closes #1496.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 12 Feb 2021 15:12:49 +1100
+
 turnkey-core-16.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 10.3/Buster.
@@ -39,7 +110,7 @@ turnkey-core-16.0 (1) turnkey; urgency=low
     - Migrate TLS/SSL inithooks from common/overlay into inithooks package.
     - Leverage (refactored/extended) turnkey-make-ssl-cert script to also
       generate Diffie-Hellman parameters. Part of #1432.
-    - Option to launch full Confconsole on completetion (defaults to minimal).
+    - Option to launch full Confconsole on completion (defaults to minimal).
     - Fix error message when password complexity = 4 in dialog_wrapper
       (previous message was misleading).
     - Add support for blacklisted characters when setting password via
@@ -51,13 +122,13 @@ turnkey-core-16.0 (1) turnkey; urgency=low
     - Upgraded webmin to v1.941
     - Developed improved systemd webmin.service file.
     - Individual Webmin stunnel config - easier to disable/enable Webmin &
-      Webshell independantly.
+      Webshell independently.
     [ Jeremy Davis ]
 
   * Web shell (shellinabox):
 
     - Individual Webshell stunnel config - easier to disable/enable Webmin &
-      Webshell independantly.
+      Webshell independently.
     [ Jeremy Davis ]
 
   * Installer (di-live):
@@ -128,7 +199,7 @@ turnkey-core-15.0 (1) turnkey; urgency=low
     - Let's Encrypt plugin:
       - install 'dehydrated' (ACME client) from Debian main repo (previously
         installed from jessie-backports)
-      - significant refatoring of plugin
+      - significant refactoring of plugin
       - support for multiple domains (closes #843)
       - fix for updated ACME ToS; including dynamically discovered latest ToS;
         inc dialog display of url for current ToS (closes #976)
@@ -138,14 +209,14 @@ turnkey-core-15.0 (1) turnkey; urgency=low
   * Firstboot Initialization (inithooks):
 
     - Updates for headless builds especially LXC/Proxmox & Xen:
-      - include specific inithooks-lxc.service file - initialization SystemD
+      - include specific inithooks-lxc.service file - initialization systemd
         service that works reliably inside an LXC container (and doesn't effect
         other builds) (closes #1071)
-      - include specific inithooks-xen.service file - initialization SystemD
+      - include specific inithooks-xen.service file - initialization systemd
         service that works reliably with the Xen console (and doesn't effect
         other builds)
       - force non-interactive dpkg-reconfigure of openssh-server (closes #1085)
-      - updated initfence index page to note that webshell not avaialble 
+      - updated initfence index page to note that webshell not available
         (closes #1087)
       - fix edge case bug where turnkey-sudoadmin would incorrectly adjust
         services.txt (closes #1124)
@@ -162,7 +233,7 @@ turnkey-core-15.0 (1) turnkey; urgency=low
     - remove webmin-file (java based filemanager) module (closes #965)
     - remove webmin-texteditor module (upstream)
     - include webmin-fail2ban module
-    - add convience symlinks to useful Webmin logs (in /var/log/webmin)
+    - add convenience symlinks to useful Webmin logs (in /var/log/webmin)
     - reconfigure webmin-raid & webmin-lvm modules during build (workaround
       for #1091)
 
@@ -196,7 +267,7 @@ turnkey-core-15.0 (1) turnkey; urgency=low
   * Miscellaneous:
 
     - update to support overlayFS (default layering filesystem in stretch)
-    - default to SystemD init system for all builds
+    - default to systemd init system for all builds
     - use traditional network interface names, e.g. 'eth0' (disable stretch
       default of "Predictable Network Interface Names")
     - 'dpkg-vendor --query Vendor' now returns 'TurnKey` (closes #196)
@@ -285,8 +356,8 @@ turnkey-core-14.0 (1) turnkey; urgency=low
     - Ability to force a profile.
     - Increased robustness of MySQL backup/restore.
     - Improved logging (output in realtime, exceptions, rotation).
-    - Usability improvments (more verbose, self-documenting).
-    - Improved --debug behaviour.
+    - Usability improvements (more verbose, self-documenting).
+    - Improved --debug behavior.
     - Multiple bugfixes and improvements
       https://github.com/turnkeylinux/tklbam/blob/master/docs/RelNotes-1.4.txt
 
@@ -298,7 +369,7 @@ turnkey-core-14.0 (1) turnkey; urgency=low
   * Web shell (shellinabox):
 
     - Served behind stunnel4 for improved SSL.
-    - Bugfix: only one line displayed on mobile device (ie. ipad).
+    - Bugfix: only one line displayed on mobile device (i.e. ipad).
 
   * Initialization hooks (inithooks):
 
@@ -324,7 +395,7 @@ turnkey-core-14.0 (1) turnkey; urgency=low
     - Updated build-depends and recommends.
     - Added support for systemd.
 
-  * Miscallaneous
+  * Miscellaneous
 
     - monit: added cpu/ram/swap/disk alerts.
     - systemd: set as default init system.
@@ -497,7 +568,7 @@ turnkey-core-12.0 (1) turnkey; urgency=low
     - inithooks: Improved headless deployment (REDIRECT_OUTPUT directive).
     - etckeeper: Uninitialization post build and firstboot (turnkey-init).
     - resolvconf: Removed upstart hack (not relevant on Squeeze).
-    - confconsole: Miscallaneous bugfixes and refactoring.
+    - confconsole: Miscellaneous bugfixes and refactoring.
     - install-security-updates: Wrapper script for convenience.
 
  -- Alon Swartz <alon@turnkeylinux.org>  Wed, 01 Aug 2012 08:00:00 +0200
