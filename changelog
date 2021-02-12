@@ -32,7 +32,7 @@ turnkey-core-16.1 (1) turnkey; urgency=low
 
   * Web management console (webmin):
 
-    - Updated Webmin to v1.962.
+    - Updated Webmin to v1.970.
     - Improved service to make more robust (particularly within LXC) - closes
       #1480.
     - Set iptables-legacy as default so webmin-firewall works as expected -
@@ -67,7 +67,7 @@ turnkey-core-16.1 (1) turnkey; urgency=low
     - (Apps with Adminer only) Give grant privileges to adminer MySQL/MariaDB
       user- closes #1496.
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 10 Feb 2021 15:05:27 +1100
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 12 Feb 2021 15:12:49 +1100
 
 turnkey-core-16.0 (1) turnkey; urgency=low
 
