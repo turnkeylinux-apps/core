@@ -1,3 +1,50 @@
+turnkey-core-17.0beta (1) turnkey; urgency=low
+
+  * Beta test build of v17.0.
+
+  * Upgraded base distribution to Debian 11.1/Bullseye.
+
+  * Configuration console (confconsole):
+
+    - Minor packaging changes for Debian Bullseye
+
+  * Firstboot Initialization (inithooks):
+
+    - Minor packaging changes for Debian Bullseye
+    - Bugfix typo in firstboot.d/15regen-sslcert
+    - Update the init-fence default html
+    - Update simplehttpd.py cyphers
+    - Remove dhparams generation - part of #1653
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to v1.981
+    [ Jeremy Davis ]
+    - Include webmin-firewall6 (firewall UI for IPv6) by default
+    [ Richard van Dijk ]
+    - Update individual Webmin stunnel config to support IPv6 - part of #1658
+    [ Richard van Dijk ]
+
+  * Web shell (shellinabox):
+
+    - Update individual Webshell stunnel config to support IPv6 - part of #1658
+    [ Richard van Dijk ]
+
+  * Security hardening & improvements:
+
+    - Generate and use new TurnKey Bullseye keys
+    - Provide predefined dh_params as per RFC7919 - part of #1653
+    - Enable TLS by default for use with Postfix
+    - Servers which include Apache|LigHHTTPd|Nginx now have HSTS and OCSP
+      stapling configuration (not fully enabled by default - as requires valid
+      SSL/TLS cert)
+
+  * 
+
+  * 
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 05 Nov 2021 10:49:35 +1100
+
 turnkey-core-16.1 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 10.8/Buster.
