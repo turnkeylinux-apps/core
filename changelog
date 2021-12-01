@@ -1,6 +1,4 @@
-turnkey-core-17.0beta (1) turnkey; urgency=low
-
-  * Beta test build of v17.0.
+turnkey-core-17.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 11.1/Bullseye.
 
@@ -18,7 +16,7 @@ turnkey-core-17.0beta (1) turnkey; urgency=low
 
   * Web management console (webmin):
 
-    - Upgraded webmin to v1.981
+    - Upgraded webmin to v1.982
     [ Jeremy Davis ]
     - Include webmin-firewall6 (firewall UI for IPv6) by default
     [ Richard van Dijk ]
@@ -30,6 +28,11 @@ turnkey-core-17.0beta (1) turnkey; urgency=low
     - Update individual Webshell stunnel config to support IPv6 - part of #1658
     [ Richard van Dijk ]
 
+  * Backup (tklbam):
+
+    - Change default NTPSERVER to one that also supports IPv6 - part of #1658
+    [ Richard van Dijk ]
+
   * Security hardening & improvements:
 
     - Generate and use new TurnKey Bullseye keys
@@ -38,10 +41,6 @@ turnkey-core-17.0beta (1) turnkey; urgency=low
     - Servers which include Apache|LigHHTTPd|Nginx now have HSTS and OCSP
       stapling configuration (not fully enabled by default - as requires valid
       SSL/TLS cert)
-
-  * 
-
-  * 
 
  -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 05 Nov 2021 10:49:35 +1100
 
