@@ -1,3 +1,69 @@
+turnkey-core-17.0 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian 11.1/Bullseye.
+
+  * Configuration console (confconsole):
+
+    - Minor packaging changes for Debian Bullseye.
+    - Fix warnings on Confconsole when upgrading to Python3.9 - resolved by
+      swapping identity check for equality check - closes #1634.
+    - Remove dhparams generation - part of #1653.
+
+  * Firstboot Initialization (inithooks):
+
+    - Minor packaging changes for Debian Bullseye.
+    - Bugfix typo in firstboot.d/15regen-sslcert.
+    - Update the init-fence default html.
+    - Update simplehttpd.py cyphers.
+    - Remove dhparams generation - part of #1653.
+    - Code refactor to provide inithook_lib.
+    [ Stefan Davis ]
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to v1.982.
+    [ Jeremy Davis ]
+    - Include webmin-firewall6 (firewall UI for IPv6) by default.
+    [ Richard van Dijk ]
+    - Update individual Webmin stunnel config to support IPv6 - part of #1658.
+    [ Richard van Dijk ]
+
+  * Web shell (shellinabox):
+
+    - Update individual Webshell stunnel config to support IPv6 - part of
+      #1658.
+    [ Richard van Dijk ]
+
+  * Backup (tklbam):
+
+    - Change default NTPSERVER to one that also supports IPv6 - part of #1658.
+    [ Richard van Dijk ]
+    - Build specific py2 dependencies previously provided by Debian for
+      Bullseye base (TKLBAM still py2).
+
+  * Security hardening & improvements:
+
+    - Generate and use new TurnKey Bullseye keys.
+    - Provide predefined dh_params (via 'turnkey-make-ssl-cert' where
+      relevant) as per RFC7919 - part of #1653.
+    - Enable TLS by default for use with Postfix.
+    - Servers which include Apache|LigHHTTPd|Nginx now have HSTS and OCSP
+      stapling configuration (not fully enabled by default - as requires valid
+      SSL/TLS cert).
+
+  * Misc bugfixes & feature implementations:
+
+    - Remove redundant autologin, singleuser_shell & ssh_emptypw scripts from
+      default common overlay.
+    - Cleanup/tweak MOTD.
+    - Update vim default conf path (for new version of vim in Bullseye).
+    - Move Nginx & LigHTTPd apps from FastCGI to PHP-FPM (apps with
+      Nginx/LigHTTPd only) - closes #1589.
+    - Include Nginx libmodsecurity module (apps with Nginx only) - clsoes
+      #1657.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 02 Dec 2021 15:20:28 +1100
+
 turnkey-core-16.1 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 10.8/Buster.
