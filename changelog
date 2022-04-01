@@ -8,6 +8,15 @@ turnkey-core-17.0 (1) turnkey; urgency=low
     - Fix warnings on Confconsole when upgrading to Python3.9 - resolved by
       swapping identity check for equality check - closes #1634.
     - Remove dhparams generation - part of #1653.
+    - Move Secupdates_adv_conf.py (confconsole plugin) from "common" into
+      confconsole package. Should have no end user impact.
+    - Bugfix & improvments to Let's Encrypt plugin:
+      - Fix cert not being used on stand-alone Tomcat appliance - closes #1712.
+      - Update to support changed systemd output (fixes stunnel not restarted
+        on Bullseye).
+    - Improvements in Keyboard setting plugin - not sure if this is enough to
+      fix it, but it should at least be closer. Related to #1695.
+    - General code and documentation improvements.
 
   * Firstboot Initialization (inithooks):
 
@@ -21,7 +30,9 @@ turnkey-core-17.0 (1) turnkey; urgency=low
 
   * Web management console (webmin):
 
-    - Upgraded webmin to v1.982.
+    - Upgraded webmin to v1.990.
+    - Bugfix and improve TKLBAM Webmin module. Closes #178, #190, #288,
+      #1065, #1260 & #1680.
     [ Jeremy Davis ]
     - Include webmin-firewall6 (firewall UI for IPv6) by default.
     [ Richard van Dijk ]
@@ -39,7 +50,11 @@ turnkey-core-17.0 (1) turnkey; urgency=low
     - Change default NTPSERVER to one that also supports IPv6 - part of #1658.
     [ Richard van Dijk ]
     - Build specific py2 dependencies previously provided by Debian for
-      Bullseye base (TKLBAM still py2).
+      Bullseye base (TKLBAM still py2). Ideally it should be updated to py3
+      (or rewritten) but we don't want to block v17.0 release any further.
+    - No longer include live* related packages (e.g. di-live, live-tools, etc)
+      in TKLBAM default package list (pkgs only in ISO and uninstalled on
+      install). Closes #1681.
 
   * Security hardening & improvements:
 
@@ -59,10 +74,10 @@ turnkey-core-17.0 (1) turnkey; urgency=low
     - Update vim default conf path (for new version of vim in Bullseye).
     - Move Nginx & LigHTTPd apps from FastCGI to PHP-FPM (apps with
       Nginx/LigHTTPd only) - closes #1589.
-    - Include Nginx libmodsecurity module (apps with Nginx only) - clsoes
+    - Include Nginx libmodsecurity module (apps with Nginx only) - closes
       #1657.
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 02 Dec 2021 15:20:28 +1100
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 01 Apr 2022 03:57:43 +0000
 
 turnkey-core-16.1 (1) turnkey; urgency=low
 
