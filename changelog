@@ -31,8 +31,8 @@ turnkey-core-17.0 (1) turnkey; urgency=low
   * Web management console (webmin):
 
     - Upgraded webmin to v1.990.
-    - Bugfix and improve TKLBAM Webmin module. Closes #178, #190, #288,
-      #1065, #1260 & #1680.
+    - Bugfix, refactor and improve TKLBAM Webmin module. Closes #178, #190,
+      #288, #1065, #1260 & #1680.
     [ Jeremy Davis ]
     - Include webmin-firewall6 (firewall UI for IPv6) by default.
     [ Richard van Dijk ]
@@ -74,10 +74,8 @@ turnkey-core-17.0 (1) turnkey; urgency=low
     - Update vim default conf path (for new version of vim in Bullseye).
     - Move Nginx & LigHTTPd apps from FastCGI to PHP-FPM (apps with
       Nginx/LigHTTPd only) - closes #1589.
-    - Include Nginx libmodsecurity module (apps with Nginx only) - closes
-      #1657.
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Fri, 01 Apr 2022 03:57:43 +0000
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 07 Apr 2022 06:27:15 +0000
 
 turnkey-core-16.1 (1) turnkey; urgency=low
 
