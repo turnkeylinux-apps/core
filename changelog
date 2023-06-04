@@ -1,3 +1,38 @@
+turnkey-core-18.0beta1 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian 12.x/Bullseye (still 'testing' at the
+    time of writing).
+
+  * Configuration console (confconsole):
+
+    - none
+
+  * Firstboot Initialization (inithooks):
+
+    - none
+
+  * Web management console (webmin):
+
+    - Upgraded webmin to v2.0.21.
+
+  * Web shell (shellinabox):
+
+    - none
+
+  * Backup (tklbam):
+
+    - not yet available for 18.x/bookworm.
+
+  * Security hardening & improvements:
+
+    - Generate and use new TurnKey Bookworm keys.
+
+  * Misc bugfixes & feature implementations:
+
+    - Consolidate IPv6 support.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Mon, 29 May 2023 23:50:35 +0000
+
 turnkey-core-17.1 (1) turnkey; urgency=low
 
   * Updated all Debian packages to latest.
