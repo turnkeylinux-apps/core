@@ -30,6 +30,8 @@ turnkey-core-18.0rc1 (1) turnkey; urgency=low
     - Refactor run script - use bashisms and general tidying.
     - Show blacklisted password characters more nicely.
     - Misc packaging changes/improvements.
+    - Support returning output from MySQL - i.e. support 'SELECT'. (Only
+      applies to apps that include MySQL/MariaDB).
 
   * Web management console (webmin):
 
@@ -50,11 +52,20 @@ turnkey-core-18.0rc1 (1) turnkey; urgency=low
   * Security hardening & improvements:
 
     - Generate and use new TurnKey Bookworm keys.
+    - Automate (and require) default pinning for packages from Debian
+      backports. Also support non-free backports.
+
+  * IPv6 support:
+    - Adminer (only on LAMP based apps) listen on IPv6.
+    - Nginx/NodeJS (NodeJS based apps only) listen on IPv6.
 
   * Misc bugfixes & feature implementations:
 
-    - Consolidate IPv6 support (still incomplete, but getting there).
     - Remove rsyslog package (systemd journal now all that's needed).
+    - Include zstd compression support.
+    - Enable new non-free-firmware apt repo by default.
+    - Improve turnkey-artisan so that it works reliably in cron jobs (only
+      Laravel based LAMP apps).
 
  -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 12 Jul 2023 01:23:34 +0000
 
