@@ -4,13 +4,13 @@ TurnKey Core - Debian GNU/Linux with Batteries Included
 TurnKey Core is the base operating system which all TurnKey GNU/Linux
 solutions share in common. It is commonly deployed standalone as a
 convenient starting point for custom system integrations. Benefits
-include automatic daily security updates, 1-click backup and restore, a
-web control panel, and preconfigured system monitoring with optional
-email alerts.
+include automatic daily security updates, 1-click backup and restore (TKLBAM),
+a web control panel (Webmin), and preconfigured system monitoring (Monit) with
+optional email alerts.
 
 Features:
 
-- **Base Operating System**: Debian GNU/Linux 9 (Stretch).
+- **Base Operating System**: Debian GNU/Linux 'stable'.
 
 - **Build formats**: Deploys on bare metal, virtual machines (e.g.,
   OpenStack, VMWare, VirtualBox, LXC, KVM, Xen) and in the cloud.
@@ -41,12 +41,10 @@ Features:
   fixed size partition, a Logical Volume is first created by default,
   and this may later be expanded, even across multiple physical devices.
 
-- **AJAX web shell (Web CLI)** (`shellinabox`_) - secure command line access from
-  any web browser.
-
 - **Web management interface (WebUI)** (`Webmin`_):
    
   - Listens on port 12321 (uses SSL).
+  - Provides fully interactive shell in your web browser.
   - Modern responsive theme: 'Authentic'.
   - Network modules:
      
@@ -64,8 +62,8 @@ Features:
 
   -  Tool modules:
      
+     - Fully interactive shell.
      - Text editor.
-     - Shell commands (note not proper interactive shell).
      - Simple file upload/download.
      - File manager (HTML5).
      - Custom commands.
@@ -127,7 +125,6 @@ Credentials *(passwords set at first boot)*
 .. _Auto-updated daily: https://www.turnkeylinux.org/docs/automatic-security-updates
 .. _HubDNS: https://www.turnkeylinux.org/dns
 .. _LVM: https://tldp.org/HOWTO/LVM-HOWTO/
-.. _shellinabox: https://github.com/shellinabox/shellinabox
 .. _confconsole: https://www.turnkeylinux.org/docs/confconsole#main-screen-and-basic-functionality
 .. _Webmin: https://webmin.com/
 .. _inithooks: https://github.com/turnkeylinux/inithooks
