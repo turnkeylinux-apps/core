@@ -1,27 +1,51 @@
-turnkey-core-18.0beta1 (1) turnkey; urgency=low
+turnkey-core-18.0rc1 (1) turnkey; urgency=low
 
-  * Upgraded base distribution to Debian 12.x/Bullseye (still 'testing' at the
-    time of writing).
+  * Upgraded base distribution to Debian 12.x/Bullseye.
 
   * Configuration console (confconsole):
 
-    - none
+    - Support for DNS-01 Let's Encrypt challenges.
+    [ Oleh Dmytrychenko <dmytrychenko.oleh@gmail.com> github: @NitrogenUA ]
+    - Support for getting Let's Encrypt cert via IPv6 - closes #1785.
+    - Refactor network interface code to ensure that it works as expected and
+      supports more possible network config (e.g. hotplug interfaces & wifi).
+    - Show error message rather than stacktrace when window resized to
+      incompatable resolution - closes  #1609.
+    [ Stefan Davis <stefan@turnkeylinux.org> ]
+    - Bugfix exception when quitting configuration of mail relay.
+    [ Oleh Dmytrychenko <dmytrychenko.oleh@gmail.com> github: @NitrogenUA ]
+    - Improve code quality: implement typing, fstrings and make (mostly) PEP8
+      compliant.
+      [Stefan Davis <stefan@turnkeylinux.org> & Jeremy Davis
 
   * Firstboot Initialization (inithooks):
 
-    - none
+    - Refactor start up (now hooks into getty process, rather than having it's
+      own service).
+    [ Stefan Davis <stefan@turnkeylinux.org> ]
+    - Refactor firstboot.d/01ipconfig (and 09hostname) to ensure that hostname
+      is included in dhcp info when set via inithooks.
+    - Package turnkey-make-ssl-cert script (from common overlay - now packaged
+      as turnkey-ssl). Refactor relevant scripts to leverage turnkey-ssl.
+    - Refactor run script - use bashisms and general tidying.
+    - Show blacklisted password characters more nicely.
+    - Misc packaging changes/improvements.
 
   * Web management console (webmin):
 
     - Upgraded webmin to v2.0.21.
+    - Removed stunnel reverse proxy (Webmin hosted directly now).
+    - Ensure that Webmin uses HTTPS with default cert
+      (/etc/ssl/private/cert.pem).
+    - Disabled Webmin Let's Encrypt (for now).
 
   * Web shell (shellinabox):
 
-    - none
+    - Completely removed in v18.0 (Webmin now has a proper interactive shell).
 
   * Backup (tklbam):
 
-    - not yet available for 18.x/bookworm.
+    - Ported dependencies to Debian Bookworm; otherwise unchanged.
 
   * Security hardening & improvements:
 
@@ -29,9 +53,10 @@ turnkey-core-18.0beta1 (1) turnkey; urgency=low
 
   * Misc bugfixes & feature implementations:
 
-    - Consolidate IPv6 support.
+    - Consolidate IPv6 support (still incomplete, but getting there).
+    - Remove rsyslog package (systemd journal now all that's needed).
 
- -- Jeremy Davis <jeremy@turnkeylinux.org>  Mon, 29 May 2023 23:50:35 +0000
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 12 Jul 2023 01:23:34 +0000
 
 turnkey-core-17.1 (1) turnkey; urgency=low
 
