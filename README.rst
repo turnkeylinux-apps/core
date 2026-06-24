@@ -109,7 +109,7 @@ Features:
 Credentials *(passwords set at first boot)*
 -------------------------------------------
 
--  Webmin, SSH, Shellinabox: username **root**
+-  Webmin, SSH: username **root**
 
 .. _free software: https://www.turnkeylinux.org/license
 .. _full source code: https://github.com/turnkeylinux-apps
