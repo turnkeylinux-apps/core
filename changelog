@@ -1,3 +1,12 @@
+turnkey-core-19.0.3 (1) turnkey; urgency=medium
+
+  * Include the updated Webmin backup setup and Hub approval flow.
+  * Update TKLBAM backup completion, simulation and migration support.
+  * Include the current HubDNS and certificate setup and renewal fixes.
+  * Bundle Debian security updates and retain automatic security maintenance.
+
+ -- Liraz Siri <liraz@liraz.org>  Fri, 13 Nov 2026 14:40:00 +0000
+
 turnkey-core-19.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian 13.x/Trixie.
