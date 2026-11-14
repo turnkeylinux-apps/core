@@ -1,11 +1,13 @@
 turnkey-core-19.0.3 (1) turnkey; urgency=medium
 
   * Include the updated Webmin backup setup and Hub approval flow.
-  * Update TKLBAM backup completion, simulation and migration support.
+  * Restore backups reliably through Webmin Restore and Advanced options.
+  * Complete backups when the Webmin progress window closes.
+  * Run backup simulations locally while preserving interrupted-backup state.
   * Include the current HubDNS and certificate setup and renewal fixes.
   * Bundle Debian security updates and retain automatic security maintenance.
 
- -- Liraz Siri <liraz@liraz.org>  Fri, 13 Nov 2026 14:40:00 +0000
+ -- Liraz Siri <liraz@liraz.org>  Sat, 14 Nov 2026 03:00:00 +0000
 
 turnkey-core-19.0 (1) turnkey; urgency=low
 
